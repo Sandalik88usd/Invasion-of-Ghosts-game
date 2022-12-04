@@ -56,6 +56,53 @@ namespace Game
                     }
             }
         }
+        public static void MoveMentHallway(int hor, int ver)
+        {
+            int pose = 0;
+            Console.SetCursorPosition(hor, ver);
+            ConsoleKey key = Console.ReadKey(true).Key;
+
+            while (key != ConsoleKey.Enter)
+            {
+                key = Console.ReadKey(true).Key;
+                if (pose == 3)
+                    pose = 0;
+                switch (key)
+                {
+                    case ConsoleKey.RightArrow:
+                        hor++;
+                        Animation.RunRight(pose, hor, ver);
+                        pose++;
+                        //if (pose == 3)
+                        //    pose = 0;
+                        break;
+
+                    case ConsoleKey.LeftArrow:
+                        hor--;
+                        Animation.RunLeft(pose, hor, ver);
+                        pose++;
+                        //if (pose == 3)
+                        //    pose = 0;
+                        break;
+
+                    case ConsoleKey.UpArrow:
+                        ver--;
+                        Animation.RunUp(pose, hor, ver);
+                        pose++;
+                        //if (pose == 3)
+                        //    pose = 0;
+                        break;
+
+                    case ConsoleKey.DownArrow:
+                        ver++;
+                        Animation.RunDown(pose, hor, ver);
+                        pose++;
+                        //if (pose == 3)
+                        //    pose = 0;
+                        break;
+                }
+            }
+        }
         public static void MoveMentWorkRoom(int hor, int ver, ref int trigers)
         {
             Animation.MainCharacterFaceOnScreen(hor, ver);
