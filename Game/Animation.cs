@@ -51,6 +51,20 @@ namespace Game
             //WriteAt(@"   │ - │ │ - │   ", x, y++);
             //WriteAt(@"   └───┘ └───┘   ", x, y++);
         }
+        public static void HeadOfMainCharacter(int x, int y)
+        {
+            WriteAt(" ,,,,,,,,,,,,,,, ", x, y++);
+            WriteAt("│               │", x, y++);
+            WriteAt("│    │     │    │", x, y++);
+            WriteAt("│ ─┬┬┘     └┬┬─ │", x, y++);
+            WriteAt("│  └┘  │ │  └┘  │", x, y++);
+            WriteAt("│      └─┘      │", x, y++);
+            WriteAt("│               │", x, y++);
+            WriteAt("│               │", x, y++);
+            WriteAt("└┐             ┌┘", x, y++);
+            WriteAt(" └────┬───┬────┘ ", x, y++);
+
+        }
         public static void MainCharacter(int x, int y)
         {
             WriteAt( " ,,,,,,,,,,,,,,, ", x, y++);

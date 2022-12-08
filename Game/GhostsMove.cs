@@ -9,21 +9,61 @@ namespace Game
 {
     internal class GhostsMove
     {
-        public static void GhostInHallway()
+        public static void GhostInHallway(ref int horGhost, ref int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox)
         {
-            int hor = 150 ; int ver = 18;
-            while (ver < 40)
+            int horLong = horGhost;
+            int verLong;
+            for (int i = 0; i < horGhostHitbox.Length; i++)
             {
-                Animation.WriteAt("        ", hor, ver++);
-                Animation.WriteAt("  .-.   ", hor, ver++);
-                Animation.WriteAt(" (* *)  ", hor, ver++);
-                Animation.WriteAt(" / ° \\ ", hor, ver++);
-                Animation.WriteAt("^(   \\^", hor, ver++);
-                Animation.WriteAt("  \\ (_,", hor, ver++);
-                Animation.WriteAt("   '-'", hor, ver++);
-                Animation.WriteAt("         ", hor, ver++);
-                ver -= 7;
-                Thread.Sleep(700);
+                horGhostHitbox[i] = horLong;
+                horLong++;
+            }
+            while (true)
+            {
+                if (verGhost == 18)
+                {
+                    while (verGhost < 40)
+                    {
+                        Animation.WriteAt("        ", horGhost, verGhost++);
+                        Animation.WriteAt("  .-.   ", horGhost, verGhost++);
+                        Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
+                        Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
+                        Animation.WriteAt("^(   \\^", horGhost, verGhost++);
+                        Animation.WriteAt("  \\ (_,", horGhost, verGhost++);
+                        Animation.WriteAt("   '-'", horGhost, verGhost++);
+                        Animation.WriteAt("         ", horGhost, verGhost++);
+                        verGhost -= 7;
+                        Thread.Sleep(700);
+                        verLong = verGhost;
+                        for (int i = 0; i < verGhostHitbox.Length; i++)
+                        {
+                            verGhostHitbox[i] = verLong;
+                            verLong++;
+                        }
+                    }
+                }
+                else if (verGhost > 35)
+                {
+                    while (verGhost != 18)
+                    {
+                        Animation.WriteAt("        ", horGhost, verGhost++);
+                        Animation.WriteAt("  .-.   ", horGhost, verGhost++);
+                        Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
+                        Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
+                        Animation.WriteAt("^(   \\^", horGhost, verGhost++);
+                        Animation.WriteAt("  \\ (_,", horGhost, verGhost++);
+                        Animation.WriteAt("   '-'  ", horGhost, verGhost++);
+                        Animation.WriteAt("         ", horGhost, verGhost++);
+                        verGhost -= 9;
+                        Thread.Sleep(700);
+                        verLong = verGhost;
+                        for (int i = 0; i < verGhostHitbox.Length; i++)
+                        {
+                            verGhostHitbox[i] = verLong;
+                            verLong++;
+                        }
+                    }
+                }
             }
         }
     }
