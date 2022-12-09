@@ -1102,7 +1102,7 @@ namespace Game
 |                                                                                                                                                                                                               |");
         }
 
-        static void DefaultSceneGg()
+        public static void DefaultSceneGg()
         {
             Console.Write(@"|     
 |                                                                                                                                            _______                                                            |

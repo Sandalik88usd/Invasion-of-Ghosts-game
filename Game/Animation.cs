@@ -135,8 +135,9 @@ namespace Game
             Animation.WriteAt("└───────┘", x, y + 2);
             Thread.Sleep(delay);
         }
-        public static void RunRight(int pose, int hor, int ver)
+        public static void RunRight(int pose, int hor, int ver, ref int PlayerPosition)
         {
+            PlayerPosition = 1;
 
             switch (pose)
             {
@@ -180,8 +181,9 @@ namespace Game
             }
         }
 
-        public static void RunLeft(int pose, int hor, int ver)
+        public static void RunLeft(int pose, int hor, int ver, ref int PlayerPosition)
         {
+            PlayerPosition = 2;
 
             switch (pose)
             {
@@ -224,8 +226,9 @@ namespace Game
 
             }
         }
-        public static void RunUp(int pose, int hor, int ver)
+        public static void RunUp(int pose, int hor, int ver, ref int PlayerPosition)
         {
+            PlayerPosition = 3;
 
             switch (pose)
             {
@@ -268,9 +271,10 @@ namespace Game
 
             }
         }
-        public static void RunDown(int pose, int hor, int ver)
+        public static void RunDown(int pose, int hor, int ver, ref int PlayerPosition)
         {
             Console.CursorVisible = false;
+            PlayerPosition = 4;
             switch (pose)
             {
                 case 0:

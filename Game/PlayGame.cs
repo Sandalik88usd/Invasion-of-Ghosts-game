@@ -13,6 +13,7 @@ namespace Game
     {
         public static Thread threadPlayer;
         public static Thread threadGhostInHallway;
+        public static int PlayerPosition = 0;
         public static void StartWorkRoom()
         {
             Clear();
@@ -24,28 +25,31 @@ namespace Game
             //int hor = 43; int ver = 28;
             int hor = 120; int ver = 18;
             int horGhost = 150; int verGhost = 18;
-            int pose = 0; int trigers = 1;
+            int pose = 0; int trigersInWorkRoom = 0;
+            int trigersInHallway = 0;
             int[] horGhostHitbox = new int[8];
             int[] verGhostHitbox = new int[8];
             int[] horPlayerHitbox = new int[8];
             int[] verPlayerHitbox = new int[8];
             threadGhostInHallway = new Thread(() => GhostsMove.GhostInHallway(ref horGhost, ref verGhost, ref horGhostHitbox, ref verGhostHitbox));
-            threadPlayer = new Thread(() => MoveMent.MoveMentHallway(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox));
+            threadPlayer = new Thread(() => MoveMent.MoveMentHallway(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref trigersInHallway));
             //FirstCutScene.PlayFirstCutScene();
             //WorkRoom.FrameOfWorkRoom();
             // WorkRoom.PaintWorkRoom();
-            //MoveMent.MoveMentWorkRoom(hor, ver, ref trigers);
-            SecondCutScene.PlaySecondCutScene();
+            //MoveMent.MoveMentWorkRoom(hor, ver, ref trigersInWorkRoom);
+            //SecondCutScene.PlaySecondCutScene();
             //Hallway.HallwayRoom();
 
 
             //threadGhostInHallway.Start();
             //Thread.Sleep(200);
-            threadPlayer.Start();
+            //threadPlayer.Start();
 
             //threadPlayer.Start();
             //Thread.Sleep(200);
             //threadGhostInHallway.Start();
+
+            End.EndOfGame();
 
         }
 

@@ -17,7 +17,7 @@ namespace Game
             Animation.HeadOfMainCharacter(5, 36);
             //Animation.TalkingMouth(9, 42, 50);
             int number = 0;
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 4; j++)
             {
                 Phrases(number++);
                 for (int i = 0; i < 5; i++)
@@ -86,10 +86,10 @@ namespace Game
                     Animation.WriteAt("Что сдучилось, неужели это было приведение по пути домой. Кто это был ведь Хелоувин давно уже прошел.", x, y);
                     break;
                 case 1:
-                    Animation.WriteAt("Так ещё и на работе приведения, не похоже это на совпадениею", x, y + 1);
+                    Animation.WriteAt("Так ещё и на работе приведения, не похоже это на совпадениею", x, y + 2);
                     break;
                 case 2:
-                    Animation.WriteAt("Неужели я попал в моя любимый фильм охотники за приведениями, но я не могу в это поверить.", x, y + 2);
+                    Animation.WriteAt("Неужели я попал в моя любимый фильм охотники за приведениями, но я не могу в это поверить.", x, y + 4);
                     break;
                 case 3:
                     Animation.WriteAt("  .-.   ", 150, 18);
@@ -98,7 +98,10 @@ namespace Game
                     Animation.WriteAt("^(   \\^", 150, 21);
                     Animation.WriteAt("  \\ (_,", 150, 22);
                     Animation.WriteAt("   '-'", 150, 23);
-                    Animation.WriteAt("Стоп, что это приведения в моём доме?.", x, y + 3);
+                    Animation.WriteAt("Стоп, что это приведения в моём доме?. Я не могу в это поверить.", x, y + 6);
+                    break;
+                case 4:
+                    Animation.WriteAt("Я должен взять пушки и охотников за привидениями в спальне, которую я заказал на амазоне!.", x, y + 8);
                     break;
             }
         }

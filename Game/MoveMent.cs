@@ -24,7 +24,7 @@ namespace Game
                     {
                         case ConsoleKey.RightArrow:
                             hor++;
-                            Animation.RunRight(pose, hor, ver);
+                            Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             //if (pose == 3)
                             //    pose = 0;
@@ -32,7 +32,7 @@ namespace Game
 
                         case ConsoleKey.LeftArrow:
                             hor--;
-                            Animation.RunLeft(pose, hor, ver);
+                            Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             //if (pose == 3)
                             //    pose = 0;
@@ -40,7 +40,7 @@ namespace Game
 
                         case ConsoleKey.UpArrow:
                             ver--;
-                            Animation.RunUp(pose, hor, ver);
+                            Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             //if (pose == 3)
                             //    pose = 0;
@@ -48,7 +48,7 @@ namespace Game
 
                         case ConsoleKey.DownArrow:
                             ver++;
-                            Animation.RunDown(pose, hor, ver);
+                            Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             //if (pose == 3)
                             //    pose = 0;
@@ -56,8 +56,9 @@ namespace Game
                     }
             }
         }
-        public static void MoveMentHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox)
+        public static void MoveMentHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway)
         {
+            //Animation.MainCharacterFaceOnScreen(57, 17);
             int[] xSofa = new int[52]; int[] ySofa = new int[15];
             int ixSofa = 76; int iySofa = 20;
             int[] xTorchere = new int[23]; int[] yTorchere = new int[16];
@@ -170,14 +171,15 @@ namespace Game
                 {
                     for (int i = 0; i < xAquarium.Length; i++)
                     {
-                        //if (xBookshelf[i] + 1 == hor && ver == yBookshelf[j] + 1)
-                        //    hor++;
                         if (xAquarium[i] - 1 == hor && ver == yAquarium[j] + 1)
                             hor--;
-                        //if (xBookshelf[i] == hor && ver == yBookshelf[j] + 2)
-                        //    ver++;
-                        //if (xBookshelf[i] == hor && ver == yBookshelf[j])
-                        //    ver--;
+                    }
+                }
+                for (int j = 140; j < 153; j++)
+                {
+                    if (j == hor && ver == 16 && key == ConsoleKey.Enter)
+                    {
+                        Kitchen.KitchenRoom();
                     }
                 }
                 if (ver == 16)
@@ -189,25 +191,25 @@ namespace Game
                 {
                     case ConsoleKey.RightArrow:
                         hor++;
-                        Animation.RunRight(pose, hor, ver);
+                        Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.LeftArrow:
                         hor--;
-                        Animation.RunLeft(pose, hor, ver);
+                        Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.UpArrow:
                         ver--;
-                        Animation.RunUp(pose, hor, ver);
+                        Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.DownArrow:
                         ver++;
-                        Animation.RunDown(pose, hor, ver);
+                        Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
                 }
@@ -384,25 +386,25 @@ namespace Game
                     {
                         case ConsoleKey.RightArrow:
                             hor++;
-                            Animation.RunRight(pose, hor, ver);
+                            Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             break;
 
                         case ConsoleKey.LeftArrow:
                             hor--;
-                            Animation.RunLeft(pose, hor, ver);
+                            Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             break;
 
                         case ConsoleKey.UpArrow:
                             ver--;
-                            Animation.RunUp(pose, hor, ver);
+                            Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             break;
 
                         case ConsoleKey.DownArrow:
                             ver++;
-                            Animation.RunDown(pose, hor, ver);
+                            Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
                             pose++;
                             break;
                     }
