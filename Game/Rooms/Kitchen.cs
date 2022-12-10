@@ -24,7 +24,7 @@ namespace Game.Rooms
             Painter.KitchenSurface(49, 7);
             Painter.RightShelf(37, 1);
             Painter.RightShelf(90, 1);
-            Painter.KitchenTableWithChairs(130, 30);
+            Painter.KitchenTableWithChairs(130, 29);
             Painter.BackBigKitchenShelf(20, 34);
             ReadKey();
         }

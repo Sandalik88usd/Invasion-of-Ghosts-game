@@ -750,7 +750,7 @@ namespace Game
             Animation.WriteAt("  .'    /__\\  (│__│      ^---\\__/      │__│)     .'           .'  |", xCoordinate, yCoordinate++);
             Animation.WriteAt(".'___________ _________________________________.'___________.'    |", xCoordinate, yCoordinate++);
             Animation.WriteAt("|.          .|.              .|.              .|.          .|     |", xCoordinate, yCoordinate++);
-            Animation.WriteAt("|            |                |                |            |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|            |                |                |            |     |", xCoordinate, yCoordinate++);
             Animation.WriteAt("|            |                |                |            |     |", xCoordinate, yCoordinate++);
             Animation.WriteAt("|            |                |                |            |     |", xCoordinate, yCoordinate++);
             Animation.WriteAt("|            |                |                |            |    .'", xCoordinate, yCoordinate++);

@@ -277,39 +277,39 @@ namespace Game
             switch (pose)
             {
                 case 0:
-                    WriteAt("         ", hor, ver - 1);
-                    WriteAt("    ,--,   ", hor, ver);
-                    WriteAt("    │' │   ", hor, ver + 1);
-                    WriteAt("    '_─'   ", hor, ver + 2);
-                    WriteAt(" o==(_|│   ", hor, ver + 3);
-                    WriteAt("    │__│   ", hor, ver + 4);
+                    WriteAt("          ", hor, ver - 1);
+                    WriteAt("     ,--,   ", hor, ver);
+                    WriteAt("     │' │   ", hor, ver + 1);
+                    WriteAt("     '_─'   ", hor, ver + 2);
+                    WriteAt("  o==(_|│   ", hor, ver + 3);
+                    WriteAt("     │__│   ", hor, ver + 4);
                     WriteAt("          ", hor, ver + 5);
                     break;
                 case 1:
                     WriteAt("         ", hor, ver - 1);
-                    WriteAt("    ,--,   ", hor, ver);
-                    WriteAt("    │' │   ", hor, ver + 1);
-                    WriteAt("    '_─'   ", hor, ver + 2);
-                    WriteAt(" o==(_|│   ", hor, ver + 3);
-                    WriteAt("    │_─┘   ", hor, ver + 4);
+                    WriteAt("     ,--,   ", hor, ver);
+                    WriteAt("     │' │   ", hor, ver + 1);
+                    WriteAt("     '_─'   ", hor, ver + 2);
+                    WriteAt("  o==(_|│   ", hor, ver + 3);
+                    WriteAt("     │_─┘   ", hor, ver + 4);
                     WriteAt("           ", hor, ver + 5);
                     break;
                 case 2:
                     WriteAt("           ", hor, ver - 1);
-                    WriteAt("    ,--,   ", hor, ver);
-                    WriteAt("    │' │   ", hor, ver + 1);
-                    WriteAt("    '_─'   ", hor, ver + 2);
-                    WriteAt(" o==(_|│   ", hor, ver + 3);
-                    WriteAt("    └─_│   ", hor, ver + 4);
+                    WriteAt("     ,--,   ", hor, ver);
+                    WriteAt("     │' │   ", hor, ver + 1);
+                    WriteAt("     '_─'   ", hor, ver + 2);
+                    WriteAt("  o==(_|│   ", hor, ver + 3);
+                    WriteAt("     └─_│   ", hor, ver + 4);
                     WriteAt("           ", hor, ver + 5);
                     break;
                 case 3:
                     WriteAt("           ", hor, ver - 1);
-                    WriteAt("    ,--,   ", hor, ver);
-                    WriteAt("    │' │   ", hor, ver + 1);
-                    WriteAt("    '_─'   ", hor, ver + 2);
-                    WriteAt(" o==(_|│   ", hor, ver + 3);
-                    WriteAt("    │_─┘   ", hor, ver + 4);
+                    WriteAt("     ,--,   ", hor, ver);
+                    WriteAt("     │' │   ", hor, ver + 1);
+                    WriteAt("     '_─'   ", hor, ver + 2);
+                    WriteAt("  o==(_|│   ", hor, ver + 3);
+                    WriteAt("     │_─┘   ", hor, ver + 4);
                     WriteAt("           ", hor, ver + 5);
                     break;
 
@@ -367,11 +367,11 @@ namespace Game
             switch (pose)
             {
                 case 0:
-                    WriteAt("  ,---,  ", hor, ver);
+                    WriteAt("  ,---,   ", hor, ver);
                     WriteAt("  │\\_/│  ", hor, ver + 1);
-                    WriteAt(" ('|0|;) ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
-                    WriteAt("  │_|_│  ", hor, ver + 4);
+                    WriteAt(" ('|0|;)  ", hor, ver + 2);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
+                    WriteAt("  │_|_│    ", hor, ver + 4);
                     WriteAt("         ", hor, ver + 5);
                     WriteAt("         ", hor, ver + 6);
                     break;
@@ -379,8 +379,8 @@ namespace Game
                     WriteAt("  ,---,  ", hor, ver);
                     WriteAt("  │\\_/│  ", hor, ver + 1);
                     WriteAt(" ('|0|;) ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
-                    WriteAt("  └─┤_│  ", hor, ver + 4);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
+                    WriteAt("  └─┤_│    ", hor, ver + 4);
                     WriteAt("         ", hor, ver + 5);
                     WriteAt("         ", hor, ver + 6);
                     break;
@@ -388,8 +388,8 @@ namespace Game
                     WriteAt("  ,---,  ", hor, ver);
                     WriteAt("  │\\_/│  ", hor, ver + 1);
                     WriteAt(" ('|0|;) ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
-                    WriteAt("  │_├─┘  ", hor, ver + 4);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
+                    WriteAt("  │_├─┘    ", hor, ver + 4);
                     WriteAt("         ", hor, ver + 5);
                     WriteAt("         ", hor, ver + 6);
                     break;
@@ -397,8 +397,8 @@ namespace Game
                     WriteAt("  ,---,  ", hor, ver);
                     WriteAt("  │\\_/│  ", hor, ver + 1);
                     WriteAt(" ('|0|;) ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
-                    WriteAt("  └─┤_│  ", hor, ver + 4);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
+                    WriteAt("  └─┤_│    ", hor, ver + 4);
                     WriteAt("         ", hor, ver + 5);
                     WriteAt("         ", hor, ver + 6);
                     break;
@@ -462,8 +462,8 @@ namespace Game
                     WriteAt("         ", hor, ver - 1);
                     WriteAt("  ,,,,,  ", hor, ver);
                     WriteAt("  │'_'│  ", hor, ver + 1);
-                    WriteAt(" \\o/──') ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt(" \\o/──')   ", hor, ver + 2);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
                     WriteAt("  │_|_│  ", hor, ver + 4);
                     //                   WriteAt("         ", hor, ver + 6);
                     break;
@@ -472,8 +472,8 @@ namespace Game
                     WriteAt("         ", hor, ver - 1);
                     WriteAt("  ,,,,,  ", hor, ver);
                     WriteAt("  │'-'│  ", hor, ver + 1);
-                    WriteAt(" \\o/──') ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt(" \\o/──')   ", hor, ver + 2);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
                     WriteAt("  └─┤_│  ", hor, ver + 4);
                     break;
                 case 2:
@@ -481,8 +481,8 @@ namespace Game
                     WriteAt("         ", hor, ver - 1);
                     WriteAt("  ,,,,,  ", hor, ver);
                     WriteAt("  │'_'│  ", hor, ver + 1);
-                    WriteAt(" \\o/──') ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt(" \\o/──')   ", hor, ver + 2);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
                     WriteAt("  │_├─┘  ", hor, ver + 4);
                     break;
                 case 3:
@@ -490,8 +490,8 @@ namespace Game
                     WriteAt("         ", hor, ver - 1);
                     WriteAt("  ,,,,,  ", hor, ver);
                     WriteAt("  │'-'│  ", hor, ver + 1);
-                    WriteAt(" \\o/──') ", hor, ver + 2);
-                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt(" \\o/──')   ", hor, ver + 2);
+                    WriteAt("  ├───┤   ", hor, ver + 3);
                     WriteAt("  └─┤_│  ", hor, ver + 4);
                     break;
 

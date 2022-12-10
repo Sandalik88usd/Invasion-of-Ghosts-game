@@ -16,6 +16,7 @@ namespace Game
         public static Thread threadGhostInHallway;
         public static int PlayerPosition = 0;
         public static int trigersInHallway = 0;
+        public static int gunTriger = 1;
         public static void StartWorkRoom()
         {
             Clear();
@@ -34,7 +35,7 @@ namespace Game
             int[] horPlayerHitbox = new int[8];
             int[] verPlayerHitbox = new int[8];
             threadGhostInHallway = new Thread(() => GhostsMove.GhostInHallway(ref horGhost, ref verGhost, ref horGhostHitbox, ref verGhostHitbox));
-            threadPlayer = new Thread(() => MoveMentHallway.MoveMentInHallway(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref PlayGame.trigersInHallway));
+            threadPlayer = new Thread(() => MoveMentHallway.MoveMentInHallway(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref PlayGame.trigersInHallway, ref gunTriger));
             //FirstCutScene.PlayFirstCutScene();
             //WorkRoom.FrameOfWorkRoom();
             // WorkRoom.PaintWorkRoom();
@@ -42,10 +43,6 @@ namespace Game
             //SecondCutScene.PlaySecondCutScene();
             //Hallway.HallwayRoom();
 
-            //Kitchen.KitchenRoom();
-            //ButhRoom.PaintButhRoom();
-            BedRoom.PaintBedRoom();
-
             //threadGhostInHallway.Start();
             //Thread.Sleep(200);
             //threadPlayer.Start();
@@ -53,6 +50,9 @@ namespace Game
             //threadPlayer.Start();
             //Thread.Sleep(200);
             //threadGhostInHallway.Start();
+
+            Kitchen.KitchenRoom();
+            MoveMentKithen.MoveMentInKitchen(hor,ver,ref gunTriger);
 
             //End.EndOfGame();
 

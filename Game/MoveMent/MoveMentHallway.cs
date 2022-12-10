@@ -11,19 +11,30 @@ namespace Game
 {
     internal class MoveMentHallway
     {
-        public static void MoveMentInHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway)
+        public static void MoveMentInHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway, ref int gunTriger )
         {
             //Animation.MainCharacterFaceOnScreen(57, 17);
-            int[] xSofa = new int[52]; int[] ySofa = new int[15];
-            int ixSofa = 76; int iySofa = 20;
-            int[] xTorchere = new int[23]; int[] yTorchere = new int[16];
-            int ixTorchere = 64; int iyTorchere = 20;
-            int[] xSmallTV = new int[25]; int[] ySmallTV = new int[16];
-            int ixSmallTV = 89; int iySmallTV = 31;
-            int[] xBookshelf = new int[29]; int[] yBookshelf = new int[33];
-            int ixBookshelf = 5; int iyBookshelf = 10;
-            int[] xAquarium = new int[34]; int[] yAquarium = new int[32];
-            int ixAquarium = 162; int iyAquarium = 15;
+
+            //int[] xSofa = new int[52]; int[] ySofa = new int[15];
+            //int ixSofa = 76; int iySofa = 20;
+            //int[] xTorchere = new int[23]; int[] yTorchere = new int[16];
+            //int ixTorchere = 64; int iyTorchere = 20;
+            //int[] xSmallTV = new int[25]; int[] ySmallTV = new int[16];
+            //int ixSmallTV = 89; int iySmallTV = 31;
+            //int[] xBookshelf = new int[29]; int[] yBookshelf = new int[33];
+            //int ixBookshelf = 5; int iyBookshelf = 10;
+            //int[] xAquarium = new int[34]; int[] yAquarium = new int[32];
+            //int ixAquarium = 162; int iyAquarium = 15;
+            int[] xSofa = new int[55]; int[] ySofa = new int[15];
+            int ixSofa = 73; int iySofa = 20;
+            int[] xTorchere = new int[26]; int[] yTorchere = new int[16];
+            int ixTorchere = 61; int iyTorchere = 20;
+            int[] xSmallTV = new int[28]; int[] ySmallTV = new int[16];
+            int ixSmallTV = 86; int iySmallTV = 31;
+            int[] xBookshelf = new int[32]; int[] yBookshelf = new int[33];
+            int ixBookshelf = 8; int iyBookshelf = 10;
+            int[] xAquarium = new int[37]; int[] yAquarium = new int[32];
+            int ixAquarium = 159; int iyAquarium = 15;
 
             for (int j = 0; j < xSofa.Length; j++)
                 xSofa[j] = ixSofa++;
@@ -135,36 +146,50 @@ namespace Game
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         Kitchen.KitchenRoom();
+                        MoveMentKithen.MoveMentInKitchen(hor,ver,ref gunTriger);
                     }
                 }
                 if (ver == 16)
                     ver++;
                 if (ver == 43)
                     ver--;
+                //MoveMent.LogicMoveMent(hor, ver, pose,key);
 
                 switch (key)
                 {
                     case ConsoleKey.RightArrow:
                         hor++;
-                        Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        if(gunTriger==0)
+                            Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        else
+                            Animation.RunRightWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.LeftArrow:
                         hor--;
-                        Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        if (gunTriger == 0)
+                            Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        else
+                            Animation.RunLeftWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.UpArrow:
                         ver--;
-                        Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        if (gunTriger == 0)
+                            Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        else
+                            Animation.RunUpWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.DownArrow:
                         ver++;
-                        Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        if (gunTriger == 0)
+                            Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
+                        else
+                            Animation.RunDownWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
                         pose++;
                         break;
                 }
