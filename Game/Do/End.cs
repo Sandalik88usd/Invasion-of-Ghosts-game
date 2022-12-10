@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game
+namespace Game.Do
 {
     internal class End
     {
@@ -44,11 +44,11 @@ namespace Game
                     y -= 2;
                     Thread.Sleep(700);
                 }
-                Animation.WriteAt(" ", x+2, y+2);
-                x = 51; 
+                Animation.WriteAt(" ", x + 2, y + 2);
+                x = 51;
                 y = 25;
             }
-            
+
         }
         static void WakeUp()
         {
@@ -97,7 +97,7 @@ namespace Game
                 Thread.Sleep(900);
             }
         }
-            static void DefaultSceneWithTalking()
+        static void DefaultSceneWithTalking()
         {
             Console.Write(@"
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

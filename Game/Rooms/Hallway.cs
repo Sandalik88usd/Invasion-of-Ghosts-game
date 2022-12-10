@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Game
+namespace Game.Rooms
 {
     internal class Hallway
     {
@@ -18,11 +18,11 @@ namespace Game
             WindowHeight = 50;
             BufferHeight = 50;
             WorkRoom.FrameOfWorkRoom();
-            Painter.Door(55,6);
+            Painter.Door(55, 6);
             Painter.Door(140, 6);
-            Painter.Window(95,3);
+            Painter.Window(95, 3);
             Painter.Cactus(180, 4);
-            Painter.Sofa(85, 25);
+            Painter.SofaWithGhosts(85, 25);
             Painter.Torchere(72, 25);
             Painter.SmallTV(98, 36);
             //Painter.ShoesStand(8, 13);

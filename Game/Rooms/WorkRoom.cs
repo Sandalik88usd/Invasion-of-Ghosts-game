@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Game
+namespace Game.Rooms
 {
     internal class WorkRoom
     {
@@ -40,16 +40,16 @@ namespace Game
             FrameOfWorkRoom();
             for (int i = 25; i <= 140; i += 30)
             {
-                Animation.WriteAt("|------|", i,27);
-                Animation.WriteAt("|  --  |",i,28);
-                Animation.WriteAt("|------|",i,29);
+                Animation.WriteAt("|------|", i, 27);
+                Animation.WriteAt("|  --  |", i, 28);
+                Animation.WriteAt("|------|", i, 29);
 
-                Animation.WriteAt("  ____",i,23);
-                Animation.WriteAt(@" ||""""||",i,24);
-                Animation.WriteAt(" ||__||",i,25);
-                Animation.WriteAt(" [ -=.]`)",i,26);
+                Animation.WriteAt("  ____", i, 23);
+                Animation.WriteAt(@" ||""""||", i, 24);
+                Animation.WriteAt(" ||__||", i, 25);
+                Animation.WriteAt(" [ -=.]`)", i, 26);
 
-                Animation.WriteAt("  ___  ", i , 30);
+                Animation.WriteAt("  ___  ", i, 30);
                 Animation.WriteAt(" |___|  ", i, 31);
                 Animation.WriteAt(" |_ _| ", i, 32);
                 Animation.WriteAt("   ║   ", i, 33);
@@ -57,8 +57,8 @@ namespace Game
                 Animation.WriteAt("  | |  ", i, 35);
 
                 Animation.WriteAt(" |------|", i + 10, 44);
-                Animation.WriteAt(" |______|", i + 10 , 45);
-                Animation.WriteAt(" |      |", i + 10 , 46);
+                Animation.WriteAt(" |______|", i + 10, 45);
+                Animation.WriteAt(" |      |", i + 10, 46);
 
                 Animation.WriteAt("   ____", i + 10, 40);
                 Animation.WriteAt("  |    |", i + 10, 41);
@@ -75,7 +75,7 @@ namespace Game
 
             }
             for (int i = 0; i < 209; i++)
-                Animation.WriteAt("=",i, 15);
+                Animation.WriteAt("=", i, 15);
 
             Painter.BigTable(171, 13);
             Painter.Scanner(174, 9, 1);

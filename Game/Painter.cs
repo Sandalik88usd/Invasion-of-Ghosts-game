@@ -168,6 +168,19 @@ namespace Game
             Animation.WriteAt("| |__||__| |", xCoordinate, yCoordinate++);
             Animation.WriteAt("|__________|", xCoordinate, yCoordinate++);
         }
+        public static void DoorWC(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(" __________ ", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|. . . . . |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.       . |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.   WC  . |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.       . |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.       .O|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.       . |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.       . |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|. . . . . |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|__________|", xCoordinate, yCoordinate++);
+        }
         public static void OpenedDoor(int xCoordinate, int yCoordinate)
         {
             Animation.WriteAt( " __________ ___________ ", xCoordinate, yCoordinate++);
@@ -418,6 +431,250 @@ namespace Game
             Animation.WriteAt(" │|---------------|│", xCoordinate, yCoordinate++);
             Animation.WriteAt(" └─────────────────┘", xCoordinate, yCoordinate++);
         }
+        public static void Towel(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("    ________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("[==|       |===]", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   |=======||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   |=======||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   '\"'\"\"\"\"''|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    |       |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    '\"\"'\"\"\"''", xCoordinate, yCoordinate++);
+        }
+        public static void ToiletPaper(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("  ,--.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("[=|__|=]", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  (-(", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   )-)", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  (-(", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   '-`", xCoordinate, yCoordinate++);
+        }
+        public static void Toilet(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(".----------.", xCoordinate, yCoordinate++);
+            Animation.WriteAt(";----------;", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|~~.----.  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| /      \\ |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|/        \\|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||        ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| \\ ,  , / |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("'-,######,-'", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" |##,  ,##|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  \\'####'/", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   \\`\"\"`/", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   .|  |.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  '------'", xCoordinate, yCoordinate++);
+        }
+        public static void BigToilet(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(".----------------.", xCoordinate, yCoordinate++);
+            Animation.WriteAt(";----------------;", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| ~~ .------.    |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|   /        \\   |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|  /          \\  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|  |          |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|   \\ ,    , /   |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("'---,########,---'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   /##'    '##\\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   |##,    ,##|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    \'######'/", xCoordinate, yCoordinate++);
+            Animation.WriteAt("     \\`\"\"\"\"`/", xCoordinate, yCoordinate++);
+            Animation.WriteAt("      |`\"\"`|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    .-|    |-.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   /  '    '  \\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   '----------'", xCoordinate, yCoordinate++);
+        }
+        public static void Rakovina(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("   ______________/;_____________", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" /`        .--T--|--T--.        `\\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("/_________'------'------'_________\\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("'|  _____   ____   ____   _____  |'", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" | |__~__| |    | |    | |__~__| |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" |  _____  |    | |    |  _____  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" | |     | |   {| |}   | |     | |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" | | ~~~ | |    | |    | | ~~~ | |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" |_|_____|_|____|_|____|_|_____|_|", xCoordinate, yCoordinate++);
+        }
+        public static void ButhMiror(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(" _____________________________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|  _________________________  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|O|                         |O|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| | //                      | |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|O|             //          |O|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| |                     //  | |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|O|       //                |O|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| |                         | |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|O|               //        |O|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| | //                      | |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|O|_________________________|O|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|_____________________________|", xCoordinate, yCoordinate++);
+        }
+        public static void Bed(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("  ()___", xCoordinate, yCoordinate++);
+            Animation.WriteAt("()//__/)_____________________()", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||(___)//#/_/#/_/#/_/#/_/#()/||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||----|#|_|#|_|#|_|#|_|#|_|| ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||    |_|#|_|#|_|#|_|#|_|#|| ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||====|#|_|#|_|#|_|#|_|#|_||/||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||____|_|#|_|#|_|#|_|_|_|#||/||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||    |_|_|_|_|_|_|_|_|_|_|| ()", xCoordinate, yCoordinate++);
+            Animation.WriteAt("()                        ()", xCoordinate, yCoordinate++);
+        }
+        public static void TableLamp(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(".--.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|__|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ()", xCoordinate, yCoordinate++);
+            Animation.WriteAt("(__)", xCoordinate, yCoordinate++);
+        }
+        public static void BedTable(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("  ____________", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" /           /|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("/___________/ |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.____|____.| |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.____|____.| |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.____|____.| /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|___________|/|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||       ||", xCoordinate, yCoordinate++);
+        }
+        public static void Shover(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("   ______| |___________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  /()()()| |()()()()()/|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" / | | |/___\\ | | | |/ |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("/  |_|_|/.|'\\_|_|_|_/  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|___________________|  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|            8      |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|        O       o  |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|   o               | 8|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|                O  |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|        o          |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|   @        8      |@ |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|                   |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|             O     |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| O                 |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|          8        |  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|      @         O  | o|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|                   |  /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|        O       @  | /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|___________________|/", xCoordinate, yCoordinate++);
+        }
+        public static void ClothesShelfBack(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("      ________________  _______________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    .'               .'               .|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  .'               .'               .' |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(".'_______________.'______________ .'   |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|._____________.||._____________.|     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||             ||||             ||     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||             ||||             ||     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||             ||||             ||    .|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||_____________||||_____________||  .' |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|               ||               |.'   |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|._____________.||._____________.|     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||_____________||||_____________||     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|._____________.||._____________.|     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||_____________||||_____________||     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|._____________.||._____________.|     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||_____________||||_____________||     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|._____________.||._____________.|     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||_____________||||_____________||     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|._____________.||._____________.|    .'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||             ||||             ||  .'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||_____________||||_____________||.'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("''------------------------------''", xCoordinate, yCoordinate++);
+        }
+        public static void SofaChair(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("     _.--\"\"\"\"\"--._", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   .'             '.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  /        o        \\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  |.-. o   o   o .-.|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  /   |  o   o  |   \\", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" /--. |_________| .--\\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("/ @l \\/o       o\\/ @l \\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|    /___________\\    |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|____:___________:____|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|_____________________|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" (__)             (__)", xCoordinate, yCoordinate++);
+        }
+        public static void PlazmaTV(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(" .-------------------.", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" |.-----------------.|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||                 ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" || 0_o_o_O         ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||           '--'  ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" |`-----------------'|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" `-------------------'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  ________|_|_________", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" /      /_____\\      /|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("/───────────────────/ |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|___________________| |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|___             ___| /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|___|___________|___|/|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||               ||", xCoordinate, yCoordinate++);
+        }
+        public static void GhostbustersPoster(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("╔═════════════════════════════════════════════════════════════════════════╗", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║              _ .-'  / .._               _____ _               _         ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║           .-:'/ - - \\:::::-.           / ____| |             | |        ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║         .::: '  e e  ' '-::::.        | |  __| |__   ___  ___| |_       ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║        ::::'(    ^    )_.::::::       | | |_ | '_ \\ / _ \\/ __| __|      ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║       ::::.' '.  o   '.::::'.'/_      | |__| | | | | (_) \\__ \\ |_       ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║   .  :::.'       -  .::::'_   _.:     _\\_____|_| |_|\\___/|___/\\__|      ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║ .-''---' .'|      .::::'   '''::::   | |             | |                ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║'. ..-:::'  |    .::::'        ::::   | |__  _   _ ___| |_ ___ _ __ ___  ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║ '.' ::::    \\ .::::'          ::::   | '_ \\| | | / __| __/ _ \\ '__/ __| ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║      ::::   .::::'           ::::    | |_) | |_| \\__ \\ ||  __/ |  \\__ \\ ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║       ::::.::::'._          ::::     |_.__/ \\__,_|___/\\__\\___|_|  |___/ ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("║        ::::::' /  '-      .::::                                         ║", xCoordinate, yCoordinate++);
+            //Animation.WriteAt("║         '::::-/__    __.-::::'                                          ║", xCoordinate, yCoordinate++);
+            Animation.WriteAt("╚═════════════════════════════════════════════════════════════════════════╝", xCoordinate, yCoordinate++);
+        }
+        public static void ButhWithGhosts(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("                          .-.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("          .-.            (*.*)", xCoordinate, yCoordinate++);
+            Animation.WriteAt("     o8o (* *)          ^/o°8\\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    o8o8^/ ° \\          Oo8OOo^Oo", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   Oo(\"\"o8\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"8oo\"\"\"\"\"\"\")", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  _   `\\`'                  `'   /'", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" (_)    \\                       /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("      O  \\                     /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("o   .     `-. .-----------. .-'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("           (_/             \\_)", xCoordinate, yCoordinate++);
+        }
+        public static void KitchenTableWithChairs(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("         _______________________________________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("        /                                       /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("       /   ( ;     ',  _o_            oo./     /|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" _____/   :--:      '=(   )?      ._o8o8Oo_.  /||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|_/_\\/   C|==|         '-'         \\======/  / _____", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" || /     `--'                      `----'  / |_/_\\_|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||========================================'   || ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" || |||   _____                _____    ||     ||=||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("     ||  |_/_\\_|              |_/_\\_|   ||     || ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("     ||   || ||                || ||    ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("     ||   ||=||                ||=||    ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("          || ||                || ||", xCoordinate, yCoordinate++);
+        }
+        public static void BurChair (int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(" _____", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|_/_\\_|", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" || ||", xCoordinate, yCoordinate++);
+            //Animation.WriteAt(" || ||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||=||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" || ||", xCoordinate, yCoordinate++);
+        }
         public static void ToolBoxes(int xCoordinate, int yCoordinate)
         {
             Animation.WriteAt("      ________________  _______________", xCoordinate, yCoordinate++);
@@ -456,6 +713,84 @@ namespace Game
             Animation.WriteAt(" ||__________________|__________________||", xCoordinate, yCoordinate++);
             Animation.WriteAt(" ||_____________________________________||", xCoordinate, yCoordinate++);
             Animation.WriteAt("/_|_____________________________________|_\\", xCoordinate, yCoordinate++);
+        }
+        public static void SofaWithGhosts(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("  ___.--------'``````:``````'--------.___", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" (   |               :               |   )", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  \\  |         .-.  :    .-.         |  /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   \\,;,,,     (* *) :   (* *)        | /", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   |\\%%%%\\____/ ° \\_:___/ ° \\___/~~~~~/|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  / ,\\%%%%\\  ^\\   )^|  ^(   \\^ / @*@ /, \\", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" /_ / `````  ,_) /  |    \\ (   ~~~~~~ \\ _\\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("(@l)          '-'   |     '-'          (@l)", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||__________________|__________________||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" ||_____________________________________||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("/_|_____________________________________|_\\", xCoordinate, yCoordinate++);
+        }
+        public static void LeftShelf(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt(" _________________ ______________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.                '.             '.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| '.                '.             '.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|   '._________      '.______________'.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|    | ___ _____ ___ || ___ _____ ___ |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|    ||_=_|__=__|_=_||||_=_|__=__|_=_||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|    ||_____   _____||||_____   _____||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(".    ||_____   _____||||_____   _____||", xCoordinate, yCoordinate++);
+            Animation.WriteAt(" '.  ||_____===_____||||_____===_____||", xCoordinate, yCoordinate++);
+            Animation.WriteAt("   '.|_______________||_______________|", xCoordinate, yCoordinate++);
+        }
+        public static void BackBigKitchenShelf(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("         __", xCoordinate, yCoordinate++);
+            Animation.WriteAt("        /--\\", xCoordinate, yCoordinate++);
+            Animation.WriteAt("       _||||______________________________________________________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    .'  '__'    ____      ___/  \\       ____       .'           .'|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  .'    /__\\  (│__│      ^---\\__/      │__│)     .'           .'  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(".'___________ _________________________________.'___________.'    |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.          .|.              .|.              .|.          .|     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|            |                |                |            |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|            |                |                |            |     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|            |                |                |            |     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|            |                |                |            |    .'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|            |                |                |            |  .'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.          .|.              .|.              .|.          .|.'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("''----------'''------------------------------''''----------''", xCoordinate, yCoordinate++);
+        }
+        public static void RightShelf(int xCoordinate, int yCoordinate)
+        {
+            Animation.WriteAt("      ____________ ____________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    .'           .'           .|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  .'           .'           .' |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(".'___________.'___________.'   |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("| _____ ___ || ___ _____ |     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||__=__|_=_||||_=_|__=__||     |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||___===___||||___===___||    .|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||___===___||||___===___||  .'", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|___________||___________|.'", xCoordinate, yCoordinate++);
+        }
+        public static void KitchenSurface(int xCoordinate, int yCoordinate)
+        {
+
+            Animation.WriteAt("                              _", xCoordinate, yCoordinate++);
+            Animation.WriteAt("                             //", xCoordinate, yCoordinate++);
+            Animation.WriteAt("                            //|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("                           (_)|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("       _____________________O||O____________________  __________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("    .'   ___________    / /  @  / /   /(_)--(_)/   .'  │--│)   .'|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("  .'    (___/_     o|  / /_____/ /   /_  --_  /  .'    │__│  .'  |", xCoordinate, yCoordinate++);
+            Animation.WriteAt(".'____________\\_____|__/_______/____/(_)__(_)/ .'__________.'    |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|.----------.|.-----___-----.||.-----___-----.||    |_____.----------.", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|]          |||_____________||||_____________|||  .' │--│)[          |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||          ||.-----___-----.||.-----___-----.||.'   │__│ |          |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||          |||_____________||||_____________|||==========|          |", xCoordinate, yCoordinate++);
+            //Animation.WriteAt("||          ||.-----___-----.||.-----___-----.||    |_____|          |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("|]         o|||_____________||||_____________|||  .'_____ [        'o|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||          ||.-----___-----.||.-----___-----.||.'  \\___/ |          |", xCoordinate, yCoordinate++);
+            Animation.WriteAt("||__________|||_____________||||_____________|||.'________|__________|", xCoordinate, yCoordinate++);
+            Animation.WriteAt("''----------'''------------------------------'''----------'", xCoordinate, yCoordinate++);
+ 
         }
         public static void Armchair(int xCoordinate, int yCoordinate)
         {
@@ -504,7 +839,7 @@ namespace Game
             Animation.WriteAt("     | |", xCoordinate, yCoordinate++);
             Animation.WriteAt("    {___}", xCoordinate, yCoordinate++);
         }
-        public static void TableLamp(int xCoordinate, int yCoordinate)
+        public static void BigTableLamp(int xCoordinate, int yCoordinate)
         {
             Animation.WriteAt(".----.", xCoordinate, yCoordinate++);
             Animation.WriteAt("|    |", xCoordinate, yCoordinate++);
@@ -523,15 +858,6 @@ namespace Game
             Animation.WriteAt(" || ||", xCoordinate, yCoordinate++);
             Animation.WriteAt(" ||=||", xCoordinate, yCoordinate++);
             Animation.WriteAt(" || ||", xCoordinate, yCoordinate++);
-        }
-        public static void Bed(int xCoordinate, int yCoordinate)
-        {
-            Animation.WriteAt("  ()___", xCoordinate, yCoordinate++);
-            Animation.WriteAt("()//__/)_________________()", xCoordinate, yCoordinate++);
-            Animation.WriteAt("||(___)//#/_/#/_/#/_/#()/||", xCoordinate, yCoordinate++);
-            Animation.WriteAt("||----|#| |#|_|#|_|#|_|| ||", xCoordinate, yCoordinate++);
-            Animation.WriteAt("||____|_|#|_|#|_|#|_|#||/|||", xCoordinate, yCoordinate++);
-            Animation.WriteAt("||                    ||", xCoordinate, yCoordinate++);
         }
         public static void BackTVOnStand(int xCoordinate, int yCoordinate)
         {

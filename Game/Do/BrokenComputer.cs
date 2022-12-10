@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Game
+namespace Game.Do
 {
     internal class BrokenComputer
     {
@@ -71,7 +71,7 @@ namespace Game
             BufferHeight = 35;
             for (int i = 0; i < 99; i++)
             {
-                Animation.WriteAt("▄",i, 0);
+                Animation.WriteAt("▄", i, 0);
                 Animation.WriteAt("▄", i, 33);
                 Animation.WriteAt("▬", i, 28);
             }
@@ -104,9 +104,9 @@ namespace Game
         static void GhostOnScreen()
         {
             int x = 30; int y = 5;
-            Animation.WriteAt( "┌───────────────────────────┐", x, y++);
-            Animation.WriteAt( "│            .--,           │", x, y++);
-            Animation.WriteAt( "│           /  (            │", x, y++);
+            Animation.WriteAt("┌───────────────────────────┐", x, y++);
+            Animation.WriteAt("│            .--,           │", x, y++);
+            Animation.WriteAt("│           /  (            │", x, y++);
             Animation.WriteAt(@"│          /    \           │", x, y++);
             Animation.WriteAt(@"│         /      \          │", x, y++);
             Animation.WriteAt(@"│        /  0  0  \         │", x, y++);

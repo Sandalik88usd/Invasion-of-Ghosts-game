@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Game
+namespace Game.Do
 {
     internal class CallToBoss
     {
         public static void CallToBooss()
         {
             WindowOfCall();
-            Animation.MainCharacter(18,1);
+            Animation.MainCharacter(18, 1);
             Animation.Boss(65, 1);
             int number = 0;
             Thread.Sleep(700);
@@ -62,7 +62,7 @@ namespace Game
                 Animation.WriteAt("║", 0, i);
                 Animation.WriteAt("║", 98, i);
             }
-            for(int i =1; i < 22; i++)
+            for (int i = 1; i < 22; i++)
                 Animation.WriteAt("║", 49, i);
 
             Animation.WriteAt("╚", 0, 33);
@@ -76,25 +76,25 @@ namespace Game
         {
             int y = 25;
             int x = 7;
-            switch(number)
+            switch (number)
             {
                 case 0:
                     Animation.WriteAt("Billy: Hey boss, it's me Billy", x, y);
                     break;
                 case 1:
-                    Animation.WriteAt("Boss: Something happened?", x, y+1);
+                    Animation.WriteAt("Boss: Something happened?", x, y + 1);
                     break;
                 case 2:
-                    Animation.WriteAt("Billy: Yes, computer doesn't work, maybe some malwary.", x, y+2);
+                    Animation.WriteAt("Billy: Yes, computer doesn't work, maybe some malwary.", x, y + 2);
                     break;
                 case 3:
-                    Animation.WriteAt("Boss: This is bad. Then scan your papers and go home. I will call the master tomorrow.", x, y+3);
+                    Animation.WriteAt("Boss: This is bad. Then scan your papers and go home. I will call the master tomorrow.", x, y + 3);
                     break;
                 case 4:
-                    Animation.WriteAt("Billy: Okay, I'll do that.", x, y+4);
+                    Animation.WriteAt("Billy: Okay, I'll do that.", x, y + 4);
                     break;
                 case 5:
-                    Animation.WriteAt("Boss: Goodbay", x, y+5);
+                    Animation.WriteAt("Boss: Goodbay", x, y + 5);
                     break;
                 case 6:
                     Animation.WriteAt("Billy: The scanner doesn't work either, looks like malware is on our network.", x, y);

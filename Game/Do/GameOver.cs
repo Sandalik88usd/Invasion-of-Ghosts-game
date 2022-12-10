@@ -5,20 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Game
+namespace Game.Do
 {
-    internal class Kitchen
+    internal class GameOver
     {
-        public static void KitchenRoom()
+        public static void Deth()
         {
+            PlayGame.trigersInHallway = 1;
             Clear();
             CursorVisible = false;
             WindowWidth = 210;
             BufferWidth = 210;
             WindowHeight = 50;
             BufferHeight = 50;
-            WorkRoom.FrameOfWorkRoom();
-            ReadKey();
+            Animation.WriteAt("GameOver", 15, 5);
+
         }
     }
 }

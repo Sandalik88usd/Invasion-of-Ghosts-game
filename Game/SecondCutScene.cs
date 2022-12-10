@@ -17,12 +17,14 @@ namespace Game
             Animation.HeadOfMainCharacter(5, 36);
             //Animation.TalkingMouth(9, 42, 50);
             int number = 0;
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < 5; j++)
             {
                 Phrases(number++);
-                for (int i = 0; i < 5; i++)
-                    Animation.TalkingMouth(9, 42, 50);
+                for (int i = 0; i < 8; i++)
+                    Animation.TalkingMouth(9, 42, 100);
+                Thread.Sleep(700);
             }
+            Thread.Sleep(1000);
 
         }
         static void DefaultScene()
@@ -83,13 +85,13 @@ namespace Game
             switch (number)
             {
                 case 0:
-                    Animation.WriteAt("Что сдучилось, неужели это было приведение по пути домой. Кто это был ведь Хелоувин давно уже прошел.", x, y);
+                    Animation.WriteAt("What happened, did I see a ghost on the way home. Who was it? Halloween is already over.", x, y);
                     break;
                 case 1:
-                    Animation.WriteAt("Так ещё и на работе приведения, не похоже это на совпадениею", x, y + 2);
+                    Animation.WriteAt("Also, at work, casts on the computer and scanner, this does not seem to be a coincidence.", x, y + 2);
                     break;
                 case 2:
-                    Animation.WriteAt("Неужели я попал в моя любимый фильм охотники за приведениями, но я не могу в это поверить.", x, y + 4);
+                    Animation.WriteAt("It looks like I'm in my favorite Ghostbusters movie, but I can't believe it.", x, y + 4);
                     break;
                 case 3:
                     Animation.WriteAt("  .-.   ", 150, 18);
@@ -98,10 +100,10 @@ namespace Game
                     Animation.WriteAt("^(   \\^", 150, 21);
                     Animation.WriteAt("  \\ (_,", 150, 22);
                     Animation.WriteAt("   '-'", 150, 23);
-                    Animation.WriteAt("Стоп, что это приведения в моём доме?. Я не могу в это поверить.", x, y + 6);
+                    Animation.WriteAt("Wait, what are these ghosts in my house? It can't be real, but what if I didn't imagine it.", x, y + 6);
                     break;
                 case 4:
-                    Animation.WriteAt("Я должен взять пушки и охотников за привидениями в спальне, которую я заказал на амазоне!.", x, y + 8);
+                    Animation.WriteAt("I have to take the ghostbusters movie gun in the bedroom that I ordered from amazon and show these ghosts what I'm made of with them if they're real!", x, y + 8);
                     break;
             }
         }

@@ -180,7 +180,51 @@ namespace Game
 
             }
         }
+        public static void RunRightWithGun(int pose, int hor, int ver, ref int PlayerPosition)
+        {
+            PlayerPosition = 1;
 
+            switch (pose)
+            {
+                case 0:
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("   ,--,  ", hor, ver);
+                    WriteAt("   │ '│  ", hor, ver + 1);
+                    WriteAt("   '─_'   ", hor, ver + 2);
+                    WriteAt("   │|_)==o  ", hor, ver + 3);
+                    WriteAt("   │__│     ", hor, ver + 4);
+                    WriteAt("           ", hor, ver + 5);
+                    break;
+                case 1:
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("   ,--,  ", hor, ver);
+                    WriteAt("   │ '│  ", hor, ver + 1);
+                    WriteAt("   '─_'   ", hor, ver + 2);
+                    WriteAt("   │|_)==o  ", hor, ver + 3);
+                    WriteAt("   │_─┘    ", hor, ver + 4);
+                    WriteAt("           ", hor, ver + 5);
+                    break;
+                case 2:
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("   ,--,  ", hor, ver);
+                    WriteAt("   │ '│  ", hor, ver + 1);
+                    WriteAt("   '─_'    ", hor, ver + 2);
+                    WriteAt("   │|_)==o  ", hor, ver + 3);
+                    WriteAt("   └─_│  ", hor, ver + 4);
+                    WriteAt("         ", hor, ver + 5);
+                    break;
+                case 3:
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("   ,--,  ", hor, ver);
+                    WriteAt("   │ '│  ", hor, ver + 1);
+                    WriteAt("   '─_'    ", hor, ver + 2);
+                    WriteAt("   │|_)==o  ", hor, ver + 3);
+                    WriteAt("   │_─┘  ", hor, ver + 4);
+                    WriteAt("         ", hor, ver + 5);
+                    break;
+
+            }
+        }
         public static void RunLeft(int pose, int hor, int ver, ref int PlayerPosition)
         {
             PlayerPosition = 2;
@@ -226,6 +270,51 @@ namespace Game
 
             }
         }
+        public static void RunLeftWithGun(int pose, int hor, int ver, ref int PlayerPosition)
+        {
+            PlayerPosition = 2;
+
+            switch (pose)
+            {
+                case 0:
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("    ,--,   ", hor, ver);
+                    WriteAt("    │' │   ", hor, ver + 1);
+                    WriteAt("    '_─'   ", hor, ver + 2);
+                    WriteAt(" o==(_|│   ", hor, ver + 3);
+                    WriteAt("    │__│   ", hor, ver + 4);
+                    WriteAt("          ", hor, ver + 5);
+                    break;
+                case 1:
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("    ,--,   ", hor, ver);
+                    WriteAt("    │' │   ", hor, ver + 1);
+                    WriteAt("    '_─'   ", hor, ver + 2);
+                    WriteAt(" o==(_|│   ", hor, ver + 3);
+                    WriteAt("    │_─┘   ", hor, ver + 4);
+                    WriteAt("           ", hor, ver + 5);
+                    break;
+                case 2:
+                    WriteAt("           ", hor, ver - 1);
+                    WriteAt("    ,--,   ", hor, ver);
+                    WriteAt("    │' │   ", hor, ver + 1);
+                    WriteAt("    '_─'   ", hor, ver + 2);
+                    WriteAt(" o==(_|│   ", hor, ver + 3);
+                    WriteAt("    └─_│   ", hor, ver + 4);
+                    WriteAt("           ", hor, ver + 5);
+                    break;
+                case 3:
+                    WriteAt("           ", hor, ver - 1);
+                    WriteAt("    ,--,   ", hor, ver);
+                    WriteAt("    │' │   ", hor, ver + 1);
+                    WriteAt("    '_─'   ", hor, ver + 2);
+                    WriteAt(" o==(_|│   ", hor, ver + 3);
+                    WriteAt("    │_─┘   ", hor, ver + 4);
+                    WriteAt("           ", hor, ver + 5);
+                    break;
+
+            }
+        }
         public static void RunUp(int pose, int hor, int ver, ref int PlayerPosition)
         {
             PlayerPosition = 3;
@@ -264,6 +353,51 @@ namespace Game
                     WriteAt("  │,,,│  ", hor, ver + 1);
                     WriteAt(" ('───') ", hor, ver + 2);
                     WriteAt(" │├───┤│ ", hor, ver + 3);
+                    WriteAt("  └─┤_│  ", hor, ver + 4);
+                    WriteAt("         ", hor, ver + 5);
+                    WriteAt("         ", hor, ver + 6);
+                    break;
+
+            }
+        }
+        public static void RunUpWithGun(int pose, int hor, int ver, ref int PlayerPosition)
+        {
+            PlayerPosition = 3;
+
+            switch (pose)
+            {
+                case 0:
+                    WriteAt("  ,---,  ", hor, ver);
+                    WriteAt("  │\\_/│  ", hor, ver + 1);
+                    WriteAt(" ('|0|;) ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt("  │_|_│  ", hor, ver + 4);
+                    WriteAt("         ", hor, ver + 5);
+                    WriteAt("         ", hor, ver + 6);
+                    break;
+                case 1:
+                    WriteAt("  ,---,  ", hor, ver);
+                    WriteAt("  │\\_/│  ", hor, ver + 1);
+                    WriteAt(" ('|0|;) ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt("  └─┤_│  ", hor, ver + 4);
+                    WriteAt("         ", hor, ver + 5);
+                    WriteAt("         ", hor, ver + 6);
+                    break;
+                case 2:
+                    WriteAt("  ,---,  ", hor, ver);
+                    WriteAt("  │\\_/│  ", hor, ver + 1);
+                    WriteAt(" ('|0|;) ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt("  │_├─┘  ", hor, ver + 4);
+                    WriteAt("         ", hor, ver + 5);
+                    WriteAt("         ", hor, ver + 6);
+                    break;
+                case 3:
+                    WriteAt("  ,---,  ", hor, ver);
+                    WriteAt("  │\\_/│  ", hor, ver + 1);
+                    WriteAt(" ('|0|;) ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
                     WriteAt("  └─┤_│  ", hor, ver + 4);
                     WriteAt("         ", hor, ver + 5);
                     WriteAt("         ", hor, ver + 6);
@@ -317,7 +451,52 @@ namespace Game
 
             }
         }
+        public static void RunDownWithGun(int pose, int hor, int ver, ref int PlayerPosition)
+        {
+            Console.CursorVisible = false;
+            PlayerPosition = 4;
+            switch (pose)
+            {
+                case 0:
+                    WriteAt("         ", hor, ver - 2);
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("  ,,,,,  ", hor, ver);
+                    WriteAt("  │'_'│  ", hor, ver + 1);
+                    WriteAt(" \\o/──') ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt("  │_|_│  ", hor, ver + 4);
+                    //                   WriteAt("         ", hor, ver + 6);
+                    break;
+                case 1:
+                    WriteAt("         ", hor, ver - 2);
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("  ,,,,,  ", hor, ver);
+                    WriteAt("  │'-'│  ", hor, ver + 1);
+                    WriteAt(" \\o/──') ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt("  └─┤_│  ", hor, ver + 4);
+                    break;
+                case 2:
+                    WriteAt("         ", hor, ver - 2);
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("  ,,,,,  ", hor, ver);
+                    WriteAt("  │'_'│  ", hor, ver + 1);
+                    WriteAt(" \\o/──') ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt("  │_├─┘  ", hor, ver + 4);
+                    break;
+                case 3:
+                    WriteAt("         ", hor, ver - 2);
+                    WriteAt("         ", hor, ver - 1);
+                    WriteAt("  ,,,,,  ", hor, ver);
+                    WriteAt("  │'-'│  ", hor, ver + 1);
+                    WriteAt(" \\o/──') ", hor, ver + 2);
+                    WriteAt("  ├───┤  ", hor, ver + 3);
+                    WriteAt("  └─┤_│  ", hor, ver + 4);
+                    break;
 
+            }
+        }
         public static void MainCharacterFaceOnScreen(int hor,int ver)
         {
             //int hor = 43; int ver = 28;
@@ -326,6 +505,42 @@ namespace Game
             Animation.WriteAt(" ('───') ", hor, ver++);
             Animation.WriteAt(" │├───┤│ ", hor, ver++);
             Animation.WriteAt("  │_|_│  ", hor, ver++);
+        }
+        public static void GhostVerMove(int  horGhost, int verGhost,int ghostpose)
+        {
+            switch (ghostpose)
+            {
+                case 0:
+                    Animation.WriteAt("        ", horGhost, verGhost++);
+                    Animation.WriteAt("  .-.   ", horGhost, verGhost++);
+                    Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
+                    Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
+                    Animation.WriteAt("^(   \\^", horGhost, verGhost++);
+                    Animation.WriteAt("  \\ (_,", horGhost, verGhost++);
+                    Animation.WriteAt("   '-'  ", horGhost, verGhost++);
+                    Animation.WriteAt("         ", horGhost, verGhost++);
+                    break;
+                case 1:
+                    Animation.WriteAt("        ", horGhost, verGhost++);
+                    Animation.WriteAt("  .-.   ", horGhost, verGhost++);
+                    Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
+                    Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
+                    Animation.WriteAt("^(   \\^", horGhost, verGhost++);
+                    Animation.WriteAt("  \\ (  ", horGhost, verGhost++);
+                    Animation.WriteAt("   '-'  ", horGhost, verGhost++);
+                    Animation.WriteAt("         ", horGhost, verGhost++);
+                    break;
+                case 2:
+                    Animation.WriteAt("        ", horGhost, verGhost++);
+                    Animation.WriteAt("  .-.   ", horGhost, verGhost++);
+                    Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
+                    Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
+                    Animation.WriteAt("^\\   )^", horGhost, verGhost++);
+                    Animation.WriteAt(",_) /   ", horGhost, verGhost++);
+                    Animation.WriteAt(" '-'  ", horGhost, verGhost++);
+                    Animation.WriteAt("         ", horGhost, verGhost++);
+                    break;
+            }
         }
     }
 }
