@@ -13,18 +13,13 @@ namespace Game
     {
         public static void MoveMentInHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger )
         {
-            Animation.MainCharacterFaceOnScreen(hor, ver);
-
-            //int[] xSofa = new int[52]; int[] ySofa = new int[15];
-            //int ixSofa = 76; int iySofa = 20;
-            //int[] xTorchere = new int[23]; int[] yTorchere = new int[16];
-            //int ixTorchere = 64; int iyTorchere = 20;
-            //int[] xSmallTV = new int[25]; int[] ySmallTV = new int[16];
-            //int ixSmallTV = 89; int iySmallTV = 31;
-            //int[] xBookshelf = new int[29]; int[] yBookshelf = new int[33];
-            //int ixBookshelf = 5; int iyBookshelf = 10;
-            //int[] xAquarium = new int[34]; int[] yAquarium = new int[32];
-            //int ixAquarium = 162; int iyAquarium = 15;
+            if(PlayGame.gunTriger == 0)
+                Animation.MainCharacterFaceOnScreen(hor, ver);
+            else
+            {
+                PlayGame.playerPosition = 4;
+                Player.WritePlayerWithGun(hor, ver);
+            }
             int[] xSofa = new int[55]; int[] ySofa = new int[15];
             int ixSofa = 73; int iySofa = 20;
             int[] xTorchere = new int[26]; int[] yTorchere = new int[16];
@@ -78,8 +73,10 @@ namespace Game
                     horLong++;
                     for (int j = 0; j < horGhostHitbox.Length; j++)
                     {
-                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong)
+                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.firtGhostLive == 1)
                             GameOver.Deth();
+                        if (horGhostHitbox[j] == Gun.horGun && verGhostHitbox[i] == Gun.verGun)
+                            GhostsMove.firtGhostLive = 0;
                     }
                 }
 

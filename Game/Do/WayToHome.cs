@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Game.Rooms;
 using static System.Console;
 
-namespace Game
+namespace Game.Do
 {
     internal class WayToHome
     {
@@ -54,9 +54,9 @@ namespace Game
             for (int i = 4; i < 190; i += 48)
                 Painter.Clouds(i, 1);
             Grasses(xGrasOnTop, yGrasOnTop, xGrasOnBot, yGrasOnBot);
-            Painter.Tree(6,14);
-            Painter.SmallTree(36,18);
-            Painter.Bush(70,23);
+            Painter.Tree(6, 14);
+            Painter.SmallTree(36, 18);
+            Painter.Bush(70, 23);
             Painter.SmallTree(115, 21);
             Painter.Tree(180, 15);
             Painter.Bush(150, 13);

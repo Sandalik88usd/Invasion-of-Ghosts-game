@@ -12,7 +12,13 @@ namespace Game
     {
         public static void MoveMentInButhRoom(int hor, int ver, /*ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway,*/ ref int gunTriger)
         {
-            Animation.MainCharacterFaceOnScreen(hor, ver);
+            if (PlayGame.gunTriger == 0)
+                Animation.MainCharacterFaceOnScreen(hor, ver);
+            else
+            {
+                PlayGame.playerPosition = 4;
+                Player.WritePlayerWithGun(hor, ver);
+            }
 
 
             int[] xToilet = new int[16]; int[] yToilet = new int[12];

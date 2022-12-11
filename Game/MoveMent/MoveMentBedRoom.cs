@@ -13,7 +13,13 @@ namespace Game
     {
         public static void MoveMentInBedRoom(int hor, int ver, /*ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway,*/ ref int gunTriger)
         {
-            Animation.MainCharacterFaceOnScreen(hor, ver);
+            if (PlayGame.gunTriger == 0)
+                Animation.MainCharacterFaceOnScreen(hor, ver);
+            else
+            {
+                PlayGame.playerPosition = 4;
+                Player.WritePlayerWithGun(hor, ver);
+            }
 
 
             int[] xSofaChair = new int[22]; int[] ySofaChair = new int[12];

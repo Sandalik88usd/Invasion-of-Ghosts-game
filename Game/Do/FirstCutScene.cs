@@ -5,9 +5,8 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Do;
 
-namespace Game
+namespace Game.Do
 {
     internal class FirstCutScene
     {
@@ -608,13 +607,13 @@ namespace Game
                     switch (i)
                     {
                         case 0:
-                            Animation.WriteAt( "           ", x, y - 1);
-                            Animation.WriteAt( " ,,,,,     ", x, y);
-                            Animation.WriteAt( " │'  /     ", x, y + 1);
+                            Animation.WriteAt("           ", x, y - 1);
+                            Animation.WriteAt(" ,,,,,     ", x, y);
+                            Animation.WriteAt(" │'  /     ", x, y + 1);
                             Animation.WriteAt(@"  \__'      ", x, y + 2);
-                            Animation.WriteAt( "  │||│       ", x, y + 3);
-                            Animation.WriteAt( "  │__│      ", x, y + 4);
-                            Animation.WriteAt( "           ", x, y + 5);
+                            Animation.WriteAt("  │||│       ", x, y + 3);
+                            Animation.WriteAt("  │__│      ", x, y + 4);
+                            Animation.WriteAt("           ", x, y + 5);
                             Thread.Sleep(moveDelay);
                             x--;
                             break;
@@ -656,14 +655,14 @@ namespace Game
                 //Painter.OpenedDoor(98, 6);
             }
             y--;
-            Animation.WriteAt( " ,___,  ", x, y);
-            Animation.WriteAt( " |,,,|  ", x, y + 1);
+            Animation.WriteAt(" ,___,  ", x, y);
+            Animation.WriteAt(" |,,,|  ", x, y + 1);
             Animation.WriteAt(@" \___/  ", x, y + 2);
-            Animation.WriteAt( "{|___|}  ", x, y + 3);
-            Animation.WriteAt( "│├───┤│   ", x, y + 4);
-            Animation.WriteAt( " │_|_│    ", x, y + 5);
-            Animation.WriteAt( "         ", x, y + 6);
-        } 
+            Animation.WriteAt("{|___|}  ", x, y + 3);
+            Animation.WriteAt("│├───┤│   ", x, y + 4);
+            Animation.WriteAt(" │_|_│    ", x, y + 5);
+            Animation.WriteAt("         ", x, y + 6);
+        }
         static void TwentieFirstFrame()
         {
             int x = 112; int y = 16;
@@ -734,12 +733,12 @@ namespace Game
             DefaultSceneGg();
             int x = 76; int y = 37;
 
-            Animation.WriteAt( " ┌───┐", x, y++);
-            Animation.WriteAt( " │- -│", x, y++);
-            Animation.WriteAt( " │ $ │", x, y++);
+            Animation.WriteAt(" ┌───┐", x, y++);
+            Animation.WriteAt(" │- -│", x, y++);
+            Animation.WriteAt(" │ $ │", x, y++);
             Animation.WriteAt(@"/└───┘\", x, y++);
-            Animation.WriteAt( "|├───┤|", x, y++);
-            Animation.WriteAt( " │_|_│", x, y++);
+            Animation.WriteAt("|├───┤|", x, y++);
+            Animation.WriteAt(" │_|_│", x, y++);
         }
         static void TwentieThirdFrame()
         {
@@ -806,9 +805,9 @@ namespace Game
                             y--;
                             break;
                         case 3:
-                            Animation.WriteAt( " ┌───┐", x, y);
-                            Animation.WriteAt( " │   │", x, y + 1);
-                            Animation.WriteAt( " │===│", x, y + 2);
+                            Animation.WriteAt(" ┌───┐", x, y);
+                            Animation.WriteAt(" │   │", x, y + 1);
+                            Animation.WriteAt(" │===│", x, y + 2);
                             Animation.WriteAt(@"/└───┘\", x, y + 3);
                             Animation.WriteAt("│├───┤│ ", x, y + 4);
                             Animation.WriteAt(" └─┤_│  ", x, y + 5);
@@ -878,13 +877,13 @@ namespace Game
                 }
             }
             y--;
-            Animation.WriteAt( " ┌───┐", x, y);
-            Animation.WriteAt( " │   │", x, y + 1);
-            Animation.WriteAt( " │===│", x, y + 2);
+            Animation.WriteAt(" ┌───┐", x, y);
+            Animation.WriteAt(" │   │", x, y + 1);
+            Animation.WriteAt(" │===│", x, y + 2);
             Animation.WriteAt(@"/└───┘\", x, y + 3);
-            Animation.WriteAt( "│├───┤│ ", x, y + 4);
-            Animation.WriteAt( " │_|_│  ", x, y + 5);
-            Animation.WriteAt( "        ", x, y + 6);
+            Animation.WriteAt("│├───┤│ ", x, y + 4);
+            Animation.WriteAt(" │_|_│  ", x, y + 5);
+            Animation.WriteAt("        ", x, y + 6);
             Painter.OpenedDoor(98, 6);
         }
         static void TwentieSeventhFrame()
@@ -1000,8 +999,8 @@ namespace Game
             Animation.WriteAt("press Enter to call the Boss.", 92, 3);
         }
         public static void DefaultSceneWithColleagues()
-            {
-                Console.Write(@"|     
+        {
+            Console.Write(@"|     
 |                                                                                                                                            _______                                                            |
 |                                                                                                                                           /   |   \                                                           |
 |                                       ╔═════════════╗                            x@x                                                      | ' | ' |                                                           |
@@ -1050,7 +1049,7 @@ namespace Game
 |                                   |______|                      |______|                      |______|                      |______|                                                                          |
 |                                   |      |                      |      |                      |      |                      |      |                                                                          |
 |                                                                                                                                                                                                               |");
-            } 
+        }
         public static void DefaultSceneWithOutTwoColleagues()
         {
             Console.Write(@"|     

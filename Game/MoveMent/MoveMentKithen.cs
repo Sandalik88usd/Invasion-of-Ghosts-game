@@ -13,6 +13,13 @@ namespace Game
     {
         public static void MoveMentInKitchen(int hor, int ver, /*ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway,*/ ref int gunTriger)
         {
+            if (PlayGame.gunTriger == 0)
+                Animation.MainCharacterFaceOnScreen(hor, ver);
+            else
+            {
+                PlayGame.playerPosition = 4;
+                Player.WritePlayerWithGun(hor, ver);
+            }
 
             int[] xKitchenSurface = new int[81]; int[] yKitchenSurface = new int[15];
             int ixKitchenSurface = 38; int iyKitchenSurface = 7;
@@ -36,7 +43,6 @@ namespace Game
             for (int j = 0; j < yBackBigKitchenShelf.Length; j++)
                 yBackBigKitchenShelf[j] = iyBackBigKitchenShelf++;
 
-            Animation.MainCharacterFaceOnScreen(hor, ver);
             int pose = 0;
             SetCursorPosition(hor, ver);
             ConsoleKey key = ReadKey(true).Key;

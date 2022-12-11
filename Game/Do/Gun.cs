@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game
+namespace Game.Do
 {
     internal class Gun
     {
+        public static int horGun;
+        public static int verGun;
         public static void Shoot(int hor, int ver)
         {
-            int horGun; int verGun;
             switch (PlayGame.playerPosition)
             {
                 case 1:
@@ -23,7 +24,7 @@ namespace Game
                     Animation.WriteAt(" ", horGun, verGun);
                     break;
                 case 2:
-                     horGun = hor;  verGun = ver + 3;
+                    horGun = hor; verGun = ver + 3;
                     for (int i = 0; i <= 20; i++)
                     {
                         Animation.WriteAt("o ", horGun--, verGun);

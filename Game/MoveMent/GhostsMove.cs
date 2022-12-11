@@ -9,6 +9,7 @@ namespace Game
 {
     internal class GhostsMove
     {
+        public static int firtGhostLive = 1;
         public static void GhostInHallway(ref int horGhost, ref int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox)
         {
             int horLong = horGhost;
@@ -24,11 +25,11 @@ namespace Game
                 verGhostHitbox[i] = verLong;
                 verLong++;
             }
-            while (PlayGame.dethTriger == 0)
+            while (PlayGame.dethTriger == 0 && firtGhostLive == 1)
             {
                 if (verGhost == 18)
                 {
-                    while (verGhost < 40 && PlayGame.dethTriger == 0)
+                    while (verGhost < 40 && PlayGame.dethTriger == 0 && firtGhostLive == 1)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         verGhost += 1;
@@ -44,7 +45,7 @@ namespace Game
                         //}
                     }
                 }
-                else if (verGhost > 35 && PlayGame.dethTriger == 0)
+                else if (verGhost > 35 && PlayGame.dethTriger == 0 && firtGhostLive == 1)
                 {
                     while (verGhost != 18)
                     {

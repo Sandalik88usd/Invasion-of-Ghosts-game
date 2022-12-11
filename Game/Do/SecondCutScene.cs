@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Game
+namespace Game.Do
 {
     internal class SecondCutScene
     {
@@ -13,7 +13,7 @@ namespace Game
         {
             Clear();
             DefaultScene();
-            Animation.MainCharacterFaceOnScreen(57,17);
+            Animation.MainCharacterFaceOnScreen(57, 17);
             Animation.HeadOfMainCharacter(5, 36);
             //Animation.TalkingMouth(9, 42, 50);
             int number = 0;

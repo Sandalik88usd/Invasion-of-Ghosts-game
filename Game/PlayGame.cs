@@ -18,6 +18,7 @@ namespace Game
         public static int roomTrigers = 0;
         public static int gunTriger = 1;
         public static int dethTriger = 0;
+        public static int ghostDethTriger = 0;
         public static void StartWorkRoom()
         {
             Clear();
@@ -44,8 +45,8 @@ namespace Game
             //SecondCutScene.PlaySecondCutScene();
             Hallway.HallwayRoom();
 
-            //threadGhostInHallway.Start();
-            //Thread.Sleep(200);
+            threadGhostInHallway.Start();
+            Thread.Sleep(200);
             threadPlayer.Start();
 
             //threadPlayer.Start();
