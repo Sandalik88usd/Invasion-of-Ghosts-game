@@ -27,8 +27,6 @@ namespace Game.Rooms
             Painter.ButhMiror(73, 1);
             Painter.ButhWithGhosts(20, 30);
             Painter.Shover(150, 29);
-
-            ReadKey();
         }
         static void Tile()
         {

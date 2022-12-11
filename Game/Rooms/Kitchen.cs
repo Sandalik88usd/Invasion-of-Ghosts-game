@@ -26,7 +26,6 @@ namespace Game.Rooms
             Painter.RightShelf(90, 1);
             Painter.KitchenTableWithChairs(130, 29);
             Painter.BackBigKitchenShelf(20, 34);
-            ReadKey();
         }
     }
 }

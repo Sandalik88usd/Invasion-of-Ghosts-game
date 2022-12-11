@@ -13,25 +13,25 @@ namespace Game
             //if (key == ConsoleKey.RightArrow)
             //{
             //    hor++;
-            //    Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
+            //    Animation.RunRight(pose, hor, ver, ref PlayGame.playerPosition);
             //    pose++;
             //}
             //else if (key == ConsoleKey.LeftArrow)
             //{
             //    hor--;
-            //    Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
+            //    Animation.RunLeft(pose, hor, ver, ref PlayGame.playerPosition);
             //    pose++;
             //}
             //else if (key == ConsoleKey.UpArrow)
             //{
             //    ver--;
-            //    Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
+            //    Animation.RunUp(pose, hor, ver, ref PlayGame.playerPosition);
             //    pose++;
             //}
             //else if (key == ConsoleKey.DownArrow)
             //{
             //    ver++;
-            //    Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
+            //    Animation.RunUp(pose, hor, ver, ref PlayGame.playerPosition);
             //    pose++;
             //}
 
@@ -39,25 +39,25 @@ namespace Game
             {
                 case ConsoleKey.RightArrow:
                     hor++;
-                    Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
+                    Animation.RunRight(pose, hor, ver, ref PlayGame.playerPosition);
                     pose++;
                     break;
 
                 case ConsoleKey.LeftArrow:
                     hor--;
-                    Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
+                    Animation.RunLeft(pose, hor, ver, ref PlayGame.playerPosition);
                     pose++;
                     break;
 
                 case ConsoleKey.UpArrow:
                     ver--;
-                    Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
+                    Animation.RunUp(pose, hor, ver, ref PlayGame.playerPosition);
                     pose++;
                     break;
 
                 case ConsoleKey.DownArrow:
                     ver++;
-                    Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
+                    Animation.RunDown(pose, hor, ver, ref PlayGame.playerPosition);
                     pose++;
                     break;
             }

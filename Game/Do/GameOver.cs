@@ -11,7 +11,7 @@ namespace Game.Do
     {
         public static void Deth()
         {
-            PlayGame.DethTriger = 1;
+            PlayGame.dethTriger = 1;
             Clear();
             CursorVisible = false;
             WindowWidth = 210;

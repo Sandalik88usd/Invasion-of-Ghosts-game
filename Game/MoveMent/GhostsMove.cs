@@ -24,11 +24,11 @@ namespace Game
                 verGhostHitbox[i] = verLong;
                 verLong++;
             }
-            while (PlayGame.DethTriger == 0)
+            while (PlayGame.dethTriger == 0)
             {
                 if (verGhost == 18)
                 {
-                    while (verGhost < 40 && PlayGame.DethTriger == 0)
+                    while (verGhost < 40 && PlayGame.dethTriger == 0)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         verGhost += 1;
@@ -44,7 +44,7 @@ namespace Game
                         //}
                     }
                 }
-                else if (verGhost > 35 && PlayGame.DethTriger == 0)
+                else if (verGhost > 35 && PlayGame.dethTriger == 0)
                 {
                     while (verGhost != 18)
                     {

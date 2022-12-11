@@ -11,9 +11,9 @@ namespace Game
 {
     internal class MoveMentHallway
     {
-        public static void MoveMentInHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway, ref int gunTriger )
+        public static void MoveMentInHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger )
         {
-            //Animation.MainCharacterFaceOnScreen(57, 17);
+            Animation.MainCharacterFaceOnScreen(hor, ver);
 
             //int[] xSofa = new int[52]; int[] ySofa = new int[15];
             //int ixSofa = 76; int iySofa = 20;
@@ -65,7 +65,7 @@ namespace Game
             SetCursorPosition(hor, ver);
             ConsoleKey key = ReadKey(true).Key;
             int horLong; int verLong;
-            while (key != ConsoleKey.Escape && PlayGame.DethTriger == 0)
+            while (key != ConsoleKey.Escape && PlayGame.dethTriger == 0 && PlayGame.roomTrigers == 0)
             {
                 key = ReadKey(true).Key;
                 if (pose == 3)
@@ -145,9 +145,16 @@ namespace Game
                 {
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
+                        PlayGame.roomTrigers = 1;
                         Kitchen.KitchenRoom();
                         MoveMentKithen.MoveMentInKitchen(hor,ver,ref gunTriger);
                     }
+                }
+                if (key == ConsoleKey.Spacebar && gunTriger == 1)
+                {
+                    Gun.Shoot(hor,ver);
+                    Hallway.HallwayRoom();
+                    Player.WritePlayerWithGun(hor, ver);
                 }
                 if (ver == 16)
                     ver++;
@@ -160,36 +167,36 @@ namespace Game
                     case ConsoleKey.RightArrow:
                         hor++;
                         if(gunTriger==0)
-                            Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunRight(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunRightWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunRightWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.LeftArrow:
                         hor--;
                         if (gunTriger == 0)
-                            Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunLeft(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunLeftWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunLeftWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.UpArrow:
                         ver--;
                         if (gunTriger == 0)
-                            Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunUp(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunUpWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunUpWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.DownArrow:
                         ver++;
                         if (gunTriger == 0)
-                            Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunDown(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunDownWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunDownWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
                 }

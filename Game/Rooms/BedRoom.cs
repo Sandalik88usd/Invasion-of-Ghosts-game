@@ -27,7 +27,6 @@ namespace Game.Rooms
             Painter.BedTable(68, 37);
             Painter.BedTable(120, 37);
             Painter.TableLamp(73, 35);
-            ReadKey();
         }
     }
 }

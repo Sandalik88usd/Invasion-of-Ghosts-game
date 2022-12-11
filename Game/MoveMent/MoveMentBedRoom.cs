@@ -13,11 +13,11 @@ namespace Game
     {
         public static void MoveMentInBedRoom(int hor, int ver, /*ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway,*/ ref int gunTriger)
         {
-            //Animation.MainCharacterFaceOnScreen(57, 17);
+            Animation.MainCharacterFaceOnScreen(hor, ver);
 
 
             int[] xSofaChair = new int[22]; int[] ySofaChair = new int[12];
-            int ixSofaChair = 149; int iySofaChair = 17;
+            int ixSofaChair = 149; int iySofaChair = 15;
             int[] xPlazmaTV = new int[22]; int[] yPlazmaTV = new int[13];
             int ixPlazmaTV = 149; int iyPlazmaTV = 29;
             int[] xFirstBedTable = new int[26]; int[] yFirstBedTable = new int[14];
@@ -64,7 +64,7 @@ namespace Game
             SetCursorPosition(hor, ver);
             ConsoleKey key = ReadKey(true).Key;
             int horLong; int verLong;
-            while (key != ConsoleKey.Escape && PlayGame.DethTriger == 0)
+            while (key != ConsoleKey.Escape && PlayGame.dethTriger == 0 && PlayGame.roomTrigers == 3)
             {
                 key = ReadKey(true).Key;
                 if (pose == 3)
@@ -178,7 +178,9 @@ namespace Game
                 {
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
-                        ButhRoom.PaintButhRoom();
+                        PlayGame.roomTrigers = 1;
+                        Kitchen.KitchenRoom();
+                        MoveMentKithen.MoveMentInKitchen(hor, ver, ref gunTriger);
                     }
                 }
                 if (ver == 16)
@@ -196,36 +198,36 @@ namespace Game
                     case ConsoleKey.RightArrow:
                         hor++;
                         if (gunTriger == 0)
-                            Animation.RunRight(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunRight(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunRightWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunRightWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.LeftArrow:
                         hor--;
                         if (gunTriger == 0)
-                            Animation.RunLeft(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunLeft(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunLeftWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunLeftWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.UpArrow:
                         ver--;
                         if (gunTriger == 0)
-                            Animation.RunUp(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunUp(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunUpWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunUpWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
 
                     case ConsoleKey.DownArrow:
                         ver++;
                         if (gunTriger == 0)
-                            Animation.RunDown(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunDown(pose, hor, ver, ref PlayGame.playerPosition);
                         else
-                            Animation.RunDownWithGun(pose, hor, ver, ref PlayGame.PlayerPosition);
+                            Animation.RunDownWithGun(pose, hor, ver, ref PlayGame.playerPosition);
                         pose++;
                         break;
                 }
