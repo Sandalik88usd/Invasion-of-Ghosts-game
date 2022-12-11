@@ -43,7 +43,7 @@ namespace Game
             SetCursorPosition(hor, ver);
             ConsoleKey key = ReadKey(true).Key;
             int horLong; int verLong;
-            while (key != ConsoleKey.Escape)
+            while (key != ConsoleKey.Escape && PlayGame.DethTriger == 0)
             {
                 key = ReadKey(true).Key;
                 if (pose == 3)

@@ -15,13 +15,34 @@ namespace Game
             //Animation.MainCharacterFaceOnScreen(57, 17);
 
 
-            int[] xToilet = new int[81]; int[] yToilet = new int[15];
-            int ixToilet = 38; int iyToilet = 7;
+            int[] xToilet = new int[16]; int[] yToilet = new int[12];
+            int ixToilet = 4; int iyToilet = 6;
+            int[] xSink = new int[45]; int[] ySink = new int[9];
+            int ixSink = 61; int iySink = 13;
+            int[] xButhWithGhosts = new int[47]; int[] yButhWithGhosts = new int[14];
+            int ixButhWithGhosts = 9; int iyButhWithGhosts = 25;
+            int[] xShover = new int[35]; int[] yShover = new int[20];
+            int ixShover = 139; int iyShover = 35;
 
             for (int j = 0; j < xToilet.Length; j++)
                 xToilet[j] = ixToilet++;
             for (int j = 0; j < yToilet.Length; j++)
                 yToilet[j] = iyToilet++;
+
+            for (int j = 0; j < xSink.Length; j++)
+                xSink[j] = ixSink++;
+            for (int j = 0; j < ySink.Length; j++)
+                ySink[j] = iySink++;
+
+            for (int j = 0; j < xButhWithGhosts.Length; j++)
+                xButhWithGhosts[j] = ixButhWithGhosts++;
+            for (int j = 0; j < yButhWithGhosts.Length; j++)
+                yButhWithGhosts[j] = iyButhWithGhosts++;
+
+            for (int j = 0; j < xShover.Length; j++)
+                xShover[j] = ixShover++;
+            for (int j = 0; j < yShover.Length; j++)
+                yShover[j] = iyShover++;
 
 
 
@@ -29,7 +50,7 @@ namespace Game
             SetCursorPosition(hor, ver);
             ConsoleKey key = ReadKey(true).Key;
             int horLong; int verLong;
-            while (key != ConsoleKey.Escape)
+            while (key != ConsoleKey.Escape && PlayGame.DethTriger == 0)
             {
                 key = ReadKey(true).Key;
                 if (pose == 3)
@@ -61,6 +82,48 @@ namespace Game
                             ver--;
                     }
                 }
+                for (int j = 0; j < ySink.Length; j++)
+                {
+                    for (int i = 0; i < xSink.Length; i++)
+                    {
+                        if (xSink[i] + 1 == hor && ver == ySink[j] + 1)
+                            hor++;
+                        if (xSink[i] - 1 == hor && ver == ySink[j] + 1)
+                            hor--;
+                        if (xSink[i] == hor && ver == ySink[j] + 2)
+                            ver++;
+                        if (xSink[i] == hor && ver == ySink[j])
+                            ver--;
+                    }
+                }
+                for (int j = 0; j < yButhWithGhosts.Length; j++)
+                {
+                    for (int i = 0; i < xButhWithGhosts.Length; i++)
+                    {
+                        if (xButhWithGhosts[i] + 1 == hor && ver == yButhWithGhosts[j] + 1)
+                            hor++;
+                        if (xButhWithGhosts[i] - 1 == hor && ver == yButhWithGhosts[j] + 1)
+                            hor--;
+                        if (xButhWithGhosts[i] == hor && ver == yButhWithGhosts[j] + 2)
+                            ver++;
+                        if (xButhWithGhosts[i] == hor && ver == yButhWithGhosts[j])
+                            ver--;
+                    }
+                }
+                for (int j = 0; j < yShover.Length; j++)
+                {
+                    for (int i = 0; i < xShover.Length; i++)
+                    {
+                        if (xShover[i] + 1 == hor && ver == yShover[j] + 1)
+                            hor++;
+                        if (xShover[i] - 1 == hor && ver == yShover[j] + 1)
+                            hor--;
+                        if (xShover[i] == hor && ver == yShover[j] + 2)
+                            ver++;
+                        if (xShover[i] == hor && ver == yShover[j])
+                            ver--;
+                    }
+                }
 
                 for (int j = 13; j < 26; j++)
                 {
@@ -80,6 +143,10 @@ namespace Game
                     ver++;
                 if (ver == 43)
                     ver--;
+                if (hor == 1)
+                    hor++;
+                if (hor == 196)
+                    hor--;
                 //MoveMent.LogicMoveMent(hor, ver, pose,key);
 
                 switch (key)

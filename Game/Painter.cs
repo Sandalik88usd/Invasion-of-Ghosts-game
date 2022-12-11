@@ -566,7 +566,7 @@ namespace Game
         }
         public static void ClothesShelfBack(int xCoordinate, int yCoordinate)
         {
-            Animation.WriteAt("      ________________  _______________", xCoordinate, yCoordinate++);
+            Animation.WriteAt("      _________________________________", xCoordinate, yCoordinate++);
             Animation.WriteAt("    .'               .'               .|", xCoordinate, yCoordinate++);
             Animation.WriteAt("  .'               .'               .' |", xCoordinate, yCoordinate++);
             Animation.WriteAt(".'_______________.'______________ .'   |", xCoordinate, yCoordinate++);

@@ -21,7 +21,7 @@ namespace Game.Rooms
             Painter.Door(13, 6);
             Painter.GhostbustersPoster(80, 1);
             Painter.SofaChair(160, 17);
-            Painter.PlazmaTV(160,28);
+            Painter.PlazmaTV(160, 29);
             Painter.ClothesShelfBack(2, 26);
             Painter.Bed(86, 37);
             Painter.BedTable(68, 37);

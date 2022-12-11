@@ -11,7 +11,7 @@ namespace Game.Do
     {
         public static void Deth()
         {
-            PlayGame.trigersInHallway = 1;
+            PlayGame.DethTriger = 1;
             Clear();
             CursorVisible = false;
             WindowWidth = 210;
@@ -19,6 +19,8 @@ namespace Game.Do
             WindowHeight = 50;
             BufferHeight = 50;
             Animation.WriteAt("GameOver", 15, 5);
+            ReadKey();
+
 
         }
     }

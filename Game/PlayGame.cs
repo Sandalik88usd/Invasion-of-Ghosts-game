@@ -17,6 +17,7 @@ namespace Game
         public static int PlayerPosition = 0;
         public static int trigersInHallway = 0;
         public static int gunTriger = 1;
+        public static int DethTriger = 0;
         public static void StartWorkRoom()
         {
             Clear();
@@ -41,7 +42,7 @@ namespace Game
             // WorkRoom.PaintWorkRoom();
             //MoveMentWorkRoom.MoveMentInWorkRoom(hor, ver, ref trigersInWorkRoom);
             //SecondCutScene.PlaySecondCutScene();
-            //Hallway.HallwayRoom();
+            Hallway.HallwayRoom();
 
             //threadGhostInHallway.Start();
             //Thread.Sleep(200);
@@ -51,8 +52,14 @@ namespace Game
             //Thread.Sleep(200);
             //threadGhostInHallway.Start();
 
-            Kitchen.KitchenRoom();
-            MoveMentKithen.MoveMentInKitchen(hor,ver,ref gunTriger);
+            //Kitchen.KitchenRoom();
+            //MoveMentKithen.MoveMentInKitchen(hor,ver,ref gunTriger);
+
+            //ButhRoom.PaintButhRoom();
+            //MoveMentButhRoom.MoveMentInButhRoom(hor, ver, ref gunTriger);
+
+            BedRoom.PaintBedRoom();
+            MoveMentBedRoom.MoveMentInBedRoom(hor, ver, ref gunTriger);
 
             //End.EndOfGame();
 

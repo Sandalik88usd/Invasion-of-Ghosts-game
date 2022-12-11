@@ -12,7 +12,7 @@ namespace Game
         public static void GhostInHallway(ref int horGhost, ref int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox)
         {
             int horLong = horGhost;
-            int verLong = verGhost+10;
+            int verLong = verGhost + 10;
             int ghostpose = 0;
             for (int i = 0; i < horGhostHitbox.Length; i++)
             {
@@ -24,16 +24,16 @@ namespace Game
                 verGhostHitbox[i] = verLong;
                 verLong++;
             }
-            while (PlayGame.trigersInHallway == 0)
+            while (PlayGame.DethTriger == 0)
             {
                 if (verGhost == 18)
                 {
-                    while (verGhost < 40)
+                    while (verGhost < 40 && PlayGame.DethTriger == 0)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         verGhost += 1;
                         ghostpose++;
-                        if(ghostpose == 3)
+                        if (ghostpose == 3)
                             ghostpose = 0;
                         Thread.Sleep(700);
                         //verLong = verGhost;
@@ -44,7 +44,7 @@ namespace Game
                         //}
                     }
                 }
-                else if (verGhost > 35)
+                else if (verGhost > 35 && PlayGame.DethTriger == 0)
                 {
                     while (verGhost != 18)
                     {
