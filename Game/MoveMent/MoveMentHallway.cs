@@ -11,9 +11,10 @@ namespace Game
 {
     internal class MoveMentHallway
     {
-        public static void MoveMentInHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger )
+        public static void MoveMentInHallway(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger)
         {
-            if(PlayGame.gunTriger == 0)
+            Hallway.HallwayRoom();
+            if (PlayGame.gunTriger == 0)
                 Animation.MainCharacterFaceOnScreen(hor, ver);
             else
             {
@@ -73,10 +74,13 @@ namespace Game
                     horLong++;
                     for (int j = 0; j < horGhostHitbox.Length; j++)
                     {
-                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.firtGhostLive == 1)
+                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.firstGhostLive == 1 && PlayGame.roomTrigers == 0)
                             GameOver.Deth();
                         if (horGhostHitbox[j] == Gun.horGun && verGhostHitbox[i] == Gun.verGun)
-                            GhostsMove.firtGhostLive = 0;
+                        {
+                            GhostsMove.firstGhostLive = 0;
+                        }
+                            
                     }
                 }
 
@@ -143,8 +147,10 @@ namespace Game
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 1;
-                        Kitchen.KitchenRoom();
-                        MoveMentKithen.MoveMentInKitchen(hor,ver,ref gunTriger);
+                        if(GhostsMove.firstGhostLive == 1)
+                            GhostsMove.firstGhostLive = 2;
+                        MoveMent.PlayerInKitchenAndVerGhost(hor, ver, 100, 23);
+
                     }
                 }
                 if (key == ConsoleKey.Spacebar && gunTriger == 1)

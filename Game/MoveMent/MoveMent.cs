@@ -12,26 +12,26 @@ namespace Game
         {
             //if (key == ConsoleKey.RightArrow)
             //{
-            //    hor++;
-            //    Animation.RunRight(pose, hor, ver, ref PlayGame.playerPosition);
+            //    horPlayer++;
+            //    Animation.RunRight(pose, horPlayer, verPlayer, ref PlayGame.playerPosition);
             //    pose++;
             //}
             //else if (key == ConsoleKey.LeftArrow)
             //{
-            //    hor--;
-            //    Animation.RunLeft(pose, hor, ver, ref PlayGame.playerPosition);
+            //    horPlayer--;
+            //    Animation.RunLeft(pose, horPlayer, verPlayer, ref PlayGame.playerPosition);
             //    pose++;
             //}
             //else if (key == ConsoleKey.UpArrow)
             //{
-            //    ver--;
-            //    Animation.RunUp(pose, hor, ver, ref PlayGame.playerPosition);
+            //    verPlayer--;
+            //    Animation.RunUp(pose, horPlayer, verPlayer, ref PlayGame.playerPosition);
             //    pose++;
             //}
             //else if (key == ConsoleKey.DownArrow)
             //{
-            //    ver++;
-            //    Animation.RunUp(pose, hor, ver, ref PlayGame.playerPosition);
+            //    verPlayer++;
+            //    Animation.RunUp(pose, horPlayer, verPlayer, ref PlayGame.playerPosition);
             //    pose++;
             //}
 
@@ -61,6 +61,26 @@ namespace Game
                     pose++;
                     break;
             }
+        }
+        public static void PlayerInHallwayAndVerGhost(int horPlayer, int verPlayer,int horGhost, int verGhost)
+        {
+            Thread threadPlayer = new Thread(() => MoveMentHallway.MoveMentInHallway(horPlayer, verPlayer, ref PlayGame.horGhostHitbox, ref PlayGame.horPlayerHitbox, ref PlayGame.verGhostHitbox, ref PlayGame.gunTriger));
+            Thread threadGhostInHallway = new Thread(() => GhostsMove.VerGhostMove(horGhost, verGhost, ref PlayGame.horGhostHitbox, ref PlayGame.verGhostHitbox,40,18));
+            if(GhostsMove.firstGhostLive != 0 && PlayGame.roomTrigers == 0)
+            threadGhostInHallway.Start();
+            Thread.Sleep(200);
+            threadPlayer.Start();
+
+        }
+        public static void PlayerInKitchenAndVerGhost(int horPlayer, int verPlayer, int horGhost, int verGhost)
+        {
+            Thread threadPlayer = new Thread(() => MoveMentKitchen.MoveMentInKitchen(horPlayer, verPlayer, ref PlayGame.horGhostHitbox, ref PlayGame.horPlayerHitbox, ref PlayGame.verGhostHitbox, ref PlayGame.gunTriger));
+            Thread threadGhostInKitchen= new Thread(() => GhostsMove.GhostInKitchen(horGhost, verGhost, ref PlayGame.horGhostHitbox, ref PlayGame.verGhostHitbox,40,23));
+            if (GhostsMove.secondGhostLive != 0 && PlayGame.roomTrigers == 1)
+                threadGhostInKitchen.Start();
+            Thread.Sleep(200);
+            threadPlayer.Start();
+
         }
     }
 }

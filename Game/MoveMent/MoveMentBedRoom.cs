@@ -11,7 +11,7 @@ namespace Game
 {
     internal class MoveMentBedRoom
     {
-        public static void MoveMentInBedRoom(int hor, int ver, /*ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway,*/ ref int gunTriger)
+        public static void MoveMentInBedRoom(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger)
         {
             if (PlayGame.gunTriger == 0)
                 Animation.MainCharacterFaceOnScreen(hor, ver);
@@ -173,20 +173,14 @@ namespace Game
                     }
                 }
 
-                for (int j = 13; j < 26; j++)
-                {
-                    if (j == hor && ver == 16 && key == ConsoleKey.Enter)
-                    {
-                        BedRoom.PaintBedRoom();
-                    }
-                }
                 for (int j = 170; j < 183; j++)
                 {
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 1;
-                        Kitchen.KitchenRoom();
-                        MoveMentKithen.MoveMentInKitchen(hor, ver, ref gunTriger);
+                        if (GhostsMove.firstGhostLive == 1)
+                            GhostsMove.firstGhostLive = 2;
+                        MoveMent.PlayerInKitchenAndVerGhost(hor, ver, 100, 23);
                     }
                 }
                 if (ver == 16)

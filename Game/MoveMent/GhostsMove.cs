@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Rooms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
@@ -9,8 +10,9 @@ namespace Game
 {
     internal class GhostsMove
     {
-        public static int firtGhostLive = 1;
-        public static void GhostInHallway(ref int horGhost, ref int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox)
+        public static int firstGhostLive = 1;
+        public static int secondGhostLive = 1;
+        public static void VerGhostMove(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox, int maxVerCoordinate, int minVerCoordinate)
         {
             int horLong = horGhost;
             int verLong = verGhost + 10;
@@ -25,18 +27,28 @@ namespace Game
                 verGhostHitbox[i] = verLong;
                 verLong++;
             }
-            while (PlayGame.dethTriger == 0 && firtGhostLive == 1)
+            while (PlayGame.dethTriger == 0 && firstGhostLive == 1 && PlayGame.roomTrigers == 0)
             {
-                if (verGhost == 18)
+                if (verGhost == minVerCoordinate)
                 {
-                    while (verGhost < 40 && PlayGame.dethTriger == 0 && firtGhostLive == 1)
+                    while (verGhost < maxVerCoordinate && PlayGame.dethTriger == 0 && firstGhostLive == 1 && PlayGame.roomTrigers == 0)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
-                        verGhost += 1;
+                        verGhost++;
                         ghostpose++;
                         if (ghostpose == 3)
                             ghostpose = 0;
                         Thread.Sleep(700);
+                        if (firstGhostLive == 0)
+                        {
+                            Animation.WriteAt(@"        ", horGhost, verGhost);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                        }
                         //verLong = verGhost;
                         //for (int i = 0; i < verGhostHitbox.Length; i++)
                         //{
@@ -45,26 +57,105 @@ namespace Game
                         //}
                     }
                 }
-                else if (verGhost > 35 && PlayGame.dethTriger == 0 && firtGhostLive == 1)
+                else if (verGhost > 35 && PlayGame.dethTriger == 0 && firstGhostLive == 1 && PlayGame.roomTrigers == 0)
                 {
-                    while (verGhost != 18)
+                    while (verGhost != minVerCoordinate)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         ghostpose++;
-                        verGhost -= 1;
+                        verGhost--;
                         if (ghostpose == 3)
                             ghostpose = 0;
                         Thread.Sleep(700);
-                        //verLong = verGhost;
-                        //for (int i = 0; i < verGhostHitbox.Length; i++)
-                        //{
-                        //    verGhostHitbox[i] = verLong;
-                        //    verLong++;
-                        //}
+                        if (firstGhostLive == 0)
+                        {
+                            Animation.WriteAt(@"        ", horGhost, verGhost);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                        }
+                    }
+                }
+                //if (firstGhostLive == 2)
+                //{
+                //    switch (PlayGame.roomTrigers)
+                //    {
+                //        case 0:
+                //            Hallway.HallwayRoom();
+                //            break;
+                //        case 1:
+                //            Kitchen.KitchenRoom();
+                //            break;
+                //    }
+                //}
+            }
+        }
+        public static void GhostInKitchen(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox, int maxVerCoordinate, int minVerCoordinate)
+        {
+            int horLong = horGhost;
+            int verLong = verGhost + 10;
+            int ghostpose = 0;
+            for (int i = 0; i < horGhostHitbox.Length; i++)
+            {
+                horGhostHitbox[i] = horLong;
+                horLong++;
+            }
+            for (int i = 0; i < verGhostHitbox.Length; i++)
+            {
+                verGhostHitbox[i] = verLong;
+                verLong++;
+            }
+            while (PlayGame.dethTriger == 0 && secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+            {
+                if (verGhost == minVerCoordinate)
+                {
+                    while (verGhost < maxVerCoordinate && PlayGame.dethTriger == 0 && secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+                    {
+                        Animation.GhostVerMove(horGhost, verGhost, ghostpose);
+                        verGhost++;
+                        ghostpose++;
+                        if (ghostpose == 3)
+                            ghostpose = 0;
+                        Thread.Sleep(700);
+                        if (secondGhostLive == 0)
+                        {
+                            Animation.WriteAt(@"        ", horGhost, verGhost);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                        }
+                    }
+                }
+                else if (verGhost > 35 && PlayGame.dethTriger == 0 && secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+                {
+                    while (verGhost != minVerCoordinate)
+                    {
+                        Animation.GhostVerMove(horGhost, verGhost, ghostpose);
+                        ghostpose++;
+                        verGhost--;
+                        if (ghostpose == 3)
+                            ghostpose = 0;
+                        Thread.Sleep(700);
+                        if (secondGhostLive == 0)
+                        {
+                            Animation.WriteAt(@"        ", horGhost, verGhost);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                        }
                     }
                 }
             }
-        }
 
+        }
     }
 }

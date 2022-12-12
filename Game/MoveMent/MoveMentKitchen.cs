@@ -9,10 +9,11 @@ using static System.Console;
 
 namespace Game
 {
-    internal class MoveMentKithen
+    internal class MoveMentKitchen
     {
-        public static void MoveMentInKitchen(int hor, int ver, /*ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int trigersInHallway,*/ ref int gunTriger)
+        public static void MoveMentInKitchen(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger)
         {
+            Kitchen.KitchenRoom();
             if (PlayGame.gunTriger == 0)
                 Animation.MainCharacterFaceOnScreen(hor, ver);
             else
@@ -54,16 +55,21 @@ namespace Game
                     pose = 0;
                 horLong = hor;
                 verLong = ver + 6;
-                //for (int i = 0; i < horPlayerHitbox.Length; i++)
-                //{
-                //    horPlayerHitbox[i] = horLong;
-                //    horLong++;
-                //    for (int j = 0; j < horGhostHitbox.Length; j++)
-                //    {
-                //        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong)
-                //            GameOver.Deth();
-                //    }
-                //}
+
+                for (int i = 0; i < horPlayerHitbox.Length; i++)
+                {
+                    horPlayerHitbox[i] = horLong;
+                    horLong++;
+                    for (int j = 0; j < horGhostHitbox.Length; j++)
+                    {
+                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+                            GameOver.Deth();
+                        if (horGhostHitbox[j] == Gun.horGun && verGhostHitbox[i] == Gun.verGun)
+                        {
+                            GhostsMove.secondGhostLive = 0;
+                        }
+                    }
+                }
 
                 for (int j = 0; j < yKitchenSurface.Length; j++)
                 {
@@ -114,7 +120,7 @@ namespace Game
                     {
                         PlayGame.roomTrigers = 3;
                         BedRoom.PaintBedRoom();
-                        MoveMentBedRoom.MoveMentInBedRoom(hor,ver, ref gunTriger);
+                        MoveMentBedRoom.MoveMentInBedRoom(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref gunTriger);
                     }
                 }
                 for (int j = 170; j < 183; j++)
@@ -123,16 +129,27 @@ namespace Game
                     {
                         PlayGame.roomTrigers = 2;
                         ButhRoom.PaintButhRoom();
-                        MoveMentButhRoom.MoveMentInButhRoom(hor, ver, ref gunTriger);
+                        MoveMentButhRoom.MoveMentInButhRoom(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref gunTriger);
+                       
                     }
+                }
+                if (key == ConsoleKey.Spacebar && gunTriger == 1)
+                {
+                    Gun.Shoot(hor, ver);
+                    Kitchen.KitchenRoom();
+                    Player.WritePlayerWithGun(hor, ver);
                 }
                 for (int j = 140; j < 153; j++)
                 {
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 0;
-                        Hallway.HallwayRoom();
-                        MoveMentKithen.MoveMentInKitchen(hor, ver, ref gunTriger);
+                        if(GhostsMove.firstGhostLive == 2)
+                            GhostsMove.firstGhostLive = 1;
+                        //Hallway.HallwayRoom();
+                        //GhostsMove.VerGhostMove(150, 18, ref PlayGame.horGhostHitbox, ref PlayGame.verGhostHitbox);
+                        //MoveMentHallway.MoveMentInHallway(hor,ver,ref horGhostHitbox,ref horPlayerHitbox ,ref verGhostHitbox, ref gunTriger);
+                        MoveMent.PlayerInHallwayAndVerGhost(hor, ver, 150, 18);
                     }
                 }
                 if (ver == 16)
