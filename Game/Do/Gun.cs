@@ -10,6 +10,8 @@ namespace Game.Do
     {
         public static int horGun;
         public static int verGun;
+        public static int[] horGunHitBox = new int[21];
+        public static int[] verGunHitBox = new int[11];
         public static void Shoot(int hor, int ver)
         {
             switch (PlayGame.playerPosition)
@@ -20,6 +22,7 @@ namespace Game.Do
                     {
                         Animation.WriteAt(" o", horGun++, verGun);
                         Thread.Sleep(50);
+                        horGunHitBox[i] = horGun;
                     }
                     Animation.WriteAt(" ", horGun, verGun);
                     break;
@@ -29,6 +32,7 @@ namespace Game.Do
                     {
                         Animation.WriteAt("o ", horGun--, verGun);
                         Thread.Sleep(50);
+                        horGunHitBox[i] = horGun;
                     }
                     Animation.WriteAt("  ", horGun, verGun);
                     break;
@@ -39,6 +43,7 @@ namespace Game.Do
                         Animation.WriteAt(" ", horGun, verGun + 1);
                         Animation.WriteAt("o", horGun, verGun--);
                         Thread.Sleep(100);
+                        verGunHitBox[i] = verGun;
                     }
                     Animation.WriteAt(" ", horGun, verGun + 1);
                     break;
@@ -49,6 +54,7 @@ namespace Game.Do
                         Animation.WriteAt(" ", horGun, verGun - 1);
                         Animation.WriteAt("o", horGun, verGun++);
                         Thread.Sleep(100);
+                        verGunHitBox[i] = verGun;
                     }
                     Animation.WriteAt(" ", horGun, verGun - 1);
                     break;

@@ -10,44 +10,46 @@ namespace Game
 {
     internal class GhostsMove
     {
-        public static int firstGhostLive = 1;
-        public static int secondGhostLive = 1;
-        public static void VerGhostMove(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox, int maxVerCoordinate, int minVerCoordinate)
+        public static int hallwayGhostLive = 1;
+        public static int kitchenGhostLive = 2;
+        public static int buthGhostLive = 1;
+        public static int bedGhostLive = 2;
+        static void FindGhostHitBox(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox)
         {
-            int horLong = horGhost;
-            int verLong = verGhost + 10;
-            int ghostpose = 0;
+            verGhost += 2;
             for (int i = 0; i < horGhostHitbox.Length; i++)
             {
-                horGhostHitbox[i] = horLong;
-                horLong++;
+                horGhostHitbox[i] = horGhost;
+                horGhost++;
             }
             for (int i = 0; i < verGhostHitbox.Length; i++)
             {
-                verGhostHitbox[i] = verLong;
-                verLong++;
+                verGhostHitbox[i] = verGhost;
+                verGhost++;
             }
-            while (PlayGame.dethTriger == 0 && firstGhostLive == 1 && PlayGame.roomTrigers == 0)
+        }
+        public static void GhostMoveInHallway(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox, int maxVerCoordinate, int minVerCoordinate)
+        {
+            Thread.Sleep(500);
+            int ghostpose = 0;
+            while (PlayGame.dethTriger == 0 && hallwayGhostLive == 1 && PlayGame.roomTrigers == 0)
             {
                 if (verGhost == minVerCoordinate)
                 {
-                    while (verGhost < maxVerCoordinate && PlayGame.dethTriger == 0 && firstGhostLive == 1 && PlayGame.roomTrigers == 0)
+                    while (verGhost < maxVerCoordinate && PlayGame.dethTriger == 0 && hallwayGhostLive == 1 && PlayGame.roomTrigers == 0)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         verGhost++;
+                        FindGhostHitBox(horGhost, verGhost, ref horGhostHitbox, ref verGhostHitbox);
                         ghostpose++;
                         if (ghostpose == 3)
                             ghostpose = 0;
                         Thread.Sleep(700);
-                        if (firstGhostLive == 0)
+                        if (hallwayGhostLive == 0)
                         {
-                            Animation.WriteAt(@"        ", horGhost, verGhost);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            for (int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost++, verGhost);
+                            PlayGame.countOfDeadGhosts++;
                         }
                         //verLong = verGhost;
                         //for (int i = 0; i < verGhostHitbox.Length; i++)
@@ -57,29 +59,26 @@ namespace Game
                         //}
                     }
                 }
-                else if (verGhost > 35 && PlayGame.dethTriger == 0 && firstGhostLive == 1 && PlayGame.roomTrigers == 0)
+                else if (verGhost > 35 && PlayGame.dethTriger == 0 && hallwayGhostLive == 1 && PlayGame.roomTrigers == 0)
                 {
-                    while (verGhost != minVerCoordinate)
+                    while (verGhost != minVerCoordinate && PlayGame.dethTriger == 0 && hallwayGhostLive == 1 && PlayGame.roomTrigers == 0)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         ghostpose++;
                         verGhost--;
+                        FindGhostHitBox(horGhost, verGhost, ref horGhostHitbox, ref verGhostHitbox);
                         if (ghostpose == 3)
                             ghostpose = 0;
                         Thread.Sleep(700);
-                        if (firstGhostLive == 0)
+                        if (hallwayGhostLive == 0)
                         {
-                            Animation.WriteAt(@"        ", horGhost, verGhost);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            for (int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost++, verGhost);
+                            PlayGame.countOfDeadGhosts++;
                         }
                     }
                 }
-                //if (firstGhostLive == 2)
+                //if (hallwayGhostLive == 2)
                 //{
                 //    switch (PlayGame.roomTrigers)
                 //    {
@@ -95,62 +94,147 @@ namespace Game
         }
         public static void GhostInKitchen(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox, int maxVerCoordinate, int minVerCoordinate)
         {
-            int horLong = horGhost;
-            int verLong = verGhost + 10;
+            Thread.Sleep(500);
             int ghostpose = 0;
-            for (int i = 0; i < horGhostHitbox.Length; i++)
-            {
-                horGhostHitbox[i] = horLong;
-                horLong++;
-            }
-            for (int i = 0; i < verGhostHitbox.Length; i++)
-            {
-                verGhostHitbox[i] = verLong;
-                verLong++;
-            }
-            while (PlayGame.dethTriger == 0 && secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+            while (PlayGame.dethTriger == 0 && kitchenGhostLive == 1 && PlayGame.roomTrigers == 1)
             {
                 if (verGhost == minVerCoordinate)
                 {
-                    while (verGhost < maxVerCoordinate && PlayGame.dethTriger == 0 && secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+                    while (verGhost < maxVerCoordinate && PlayGame.dethTriger == 0 && kitchenGhostLive == 1 && PlayGame.roomTrigers == 1)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         verGhost++;
                         ghostpose++;
+                        FindGhostHitBox(horGhost, verGhost+2, ref horGhostHitbox, ref verGhostHitbox);
                         if (ghostpose == 3)
                             ghostpose = 0;
                         Thread.Sleep(700);
-                        if (secondGhostLive == 0)
+                        if (kitchenGhostLive == 0)
                         {
-                            Animation.WriteAt(@"        ", horGhost, verGhost);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            for(int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            PlayGame.countOfDeadGhosts++;
+                            break;
                         }
                     }
                 }
-                else if (verGhost > 35 && PlayGame.dethTriger == 0 && secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+                else if (verGhost > 35 && PlayGame.dethTriger == 0 && kitchenGhostLive == 1 && PlayGame.roomTrigers == 1)
                 {
-                    while (verGhost != minVerCoordinate)
+                    while (verGhost != minVerCoordinate && PlayGame.dethTriger == 0 && kitchenGhostLive == 1 && PlayGame.roomTrigers == 1)
                     {
                         Animation.GhostVerMove(horGhost, verGhost, ghostpose);
                         ghostpose++;
                         verGhost--;
+                        FindGhostHitBox(horGhost, verGhost, ref horGhostHitbox, ref verGhostHitbox);
                         if (ghostpose == 3)
                             ghostpose = 0;
                         Thread.Sleep(700);
-                        if (secondGhostLive == 0)
+                        if (kitchenGhostLive == 0)
                         {
-                            Animation.WriteAt(@"        ", horGhost, verGhost);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
-                            Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            for (int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            PlayGame.countOfDeadGhosts++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+        public static void GhostInButhRoom(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox, int maxHorCoordinate, int minHorCoordinate)
+        {
+            Thread.Sleep(700);
+            int ghostpose = 0;
+            while (PlayGame.dethTriger == 0 && buthGhostLive == 1 && PlayGame.roomTrigers == 2)
+            {
+                if (horGhost == minHorCoordinate)
+                {
+                    while (horGhost < maxHorCoordinate && PlayGame.dethTriger == 0 && buthGhostLive == 1 && PlayGame.roomTrigers == 2)
+                    {
+                        Animation.GhostVerMove(horGhost, verGhost, ghostpose);
+                        horGhost++;
+                        ghostpose++;
+                        FindGhostHitBox(horGhost, verGhost, ref horGhostHitbox, ref verGhostHitbox);
+                        if (ghostpose == 3)
+                            ghostpose = 0;
+                        Thread.Sleep(500);
+                        if (buthGhostLive == 0)
+                        {
+                            for (int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            PlayGame.countOfDeadGhosts++;
+                            break;
+                        }
+                    }
+                }
+                else if (horGhost > 35 && PlayGame.dethTriger == 0 && buthGhostLive == 1 && PlayGame.roomTrigers == 2)
+                {
+                    while (horGhost != minHorCoordinate)
+                    {
+                        Animation.GhostVerMove(horGhost, verGhost, ghostpose);
+                        ghostpose++;
+                        horGhost--;
+                        FindGhostHitBox(horGhost, verGhost, ref horGhostHitbox, ref verGhostHitbox);
+                        if (ghostpose == 3)
+                            ghostpose = 0;
+                        Thread.Sleep(500);
+                        if (buthGhostLive == 0)
+                        {
+                            for (int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost, verGhost++);
+                            PlayGame.countOfDeadGhosts++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+        public static void GhostInBedRoom(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox, int maxHorCoordinate, int minHorCoordinate)
+        {
+            Thread.Sleep(500);
+            int ghostpose = 0;
+            while (PlayGame.dethTriger == 0 && bedGhostLive == 1 && PlayGame.roomTrigers == 3)
+            {
+                if (horGhost == minHorCoordinate)
+                {
+                    while (horGhost < maxHorCoordinate && PlayGame.dethTriger == 0 && bedGhostLive == 1 && PlayGame.roomTrigers == 3)
+                    {
+                        Animation.GhostVerMove(horGhost, verGhost, ghostpose);
+                        horGhost++;
+                        ghostpose++;
+                        FindGhostHitBox(horGhost, verGhost, ref horGhostHitbox, ref verGhostHitbox);
+                        if (ghostpose == 3)
+                            ghostpose = 0;
+                        Thread.Sleep(500);
+                        if (bedGhostLive == 0)
+                        {
+                            int verGhostPlace = verGhost;
+                            for (int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost, verGhostPlace++);
+                            PlayGame.countOfDeadGhosts++;
+                            break;
+                        }
+                    }
+                }
+                else if (horGhost > 35 && PlayGame.dethTriger == 0 && bedGhostLive == 1 && PlayGame.roomTrigers == 3)
+                {
+                    while (horGhost != minHorCoordinate && PlayGame.dethTriger == 0 && bedGhostLive == 1 && PlayGame.roomTrigers == 3)
+                    {
+                        Animation.GhostVerMove(horGhost, verGhost, ghostpose);
+                        ghostpose++;
+                        horGhost--;
+                        FindGhostHitBox(horGhost, verGhost, ref horGhostHitbox, ref verGhostHitbox);
+                        if (ghostpose == 3)
+                            ghostpose = 0;
+                        Thread.Sleep(500);
+                        if (bedGhostLive == 0)
+                        {
+                            int verGhostPlace = verGhost;;
+                            for (int i = 0; i < 8; i++)
+                                Animation.WriteAt(@"        ", horGhost, verGhostPlace++);
+                            PlayGame.countOfDeadGhosts++;
+                            break;
                         }
                     }
                 }

@@ -1,4 +1,5 @@
-﻿using Game.Rooms;
+﻿using Game.Do;
+using Game.Rooms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Game
     {
         public static void MoveMentInBedRoom(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger)
         {
+            BedRoom.PaintBedRoom();
             if (PlayGame.gunTriger == 0)
                 Animation.MainCharacterFaceOnScreen(hor, ver);
             else
@@ -77,16 +79,22 @@ namespace Game
                     pose = 0;
                 horLong = hor;
                 verLong = ver + 6;
-                //for (int i = 0; i < horPlayerHitbox.Length; i++)
-                //{
-                //    horPlayerHitbox[i] = horLong;
-                //    horLong++;
-                //    for (int j = 0; j < horGhostHitbox.Length; j++)
-                //    {
-                //        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong)
-                //            GameOver.Deth();
-                //    }
-                //}
+                for (int i = 0; i < horPlayerHitbox.Length; i++)
+                {
+                    horPlayerHitbox[i] = horLong;
+                    horLong++;
+                    for (int j = 0; j < horGhostHitbox.Length; j++)
+                    {
+                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.bedGhostLive == 1 && PlayGame.roomTrigers == 3)
+                            GameOver.Deth();
+                        if (horGhostHitbox[i] == Gun.horGun && verGhostHitbox[j] == Gun.verGun)
+                        {
+                            GhostsMove.bedGhostLive = 0;
+                            break;
+                        }
+
+                    }
+                }
 
                 for (int j = 0; j < ySofaChair.Length; j++)
                 {
@@ -172,16 +180,36 @@ namespace Game
                             ver--;
                     }
                 }
+                for (int j = 2; j < 26; j++)
+                {
+                    if (j == hor && ver == 20 && PlayGame.gunTriger == 0)
+                        Animation.WriteAt("Press Enter to grab gun.", 50,32);
+                    if (j == hor && ver == 20 && key == ConsoleKey.Enter && PlayGame.gunTriger == 0)
+                    {
+                        PlayGame.gunTriger = 1;
+                        Animation.WriteAt("Press Space to shoot.    ", 50, 32);
+                        Animation.WriteAt("Shoot ghost in head to kill.    ", 50, 32);
+                        Player.WritePlayerWithGun(hor, ver+1);
+                    }
+                }
 
-                for (int j = 170; j < 183; j++)
+                for (int j = 13; j < 26; j++)
                 {
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 1;
-                        if (GhostsMove.firstGhostLive == 1)
-                            GhostsMove.firstGhostLive = 2;
+                        if (GhostsMove.kitchenGhostLive == 2)
+                            GhostsMove.kitchenGhostLive = 1;
+                        if (GhostsMove.bedGhostLive == 1)
+                            GhostsMove.bedGhostLive = 2;
                         MoveMent.PlayerInKitchenAndVerGhost(hor, ver, 100, 23);
                     }
+                }
+                if (key == ConsoleKey.Spacebar && gunTriger == 1)
+                {
+                    Gun.Shoot(hor, ver);
+                    BedRoom.PaintBedRoom();
+                    Player.WritePlayerWithGun(hor, ver);
                 }
                 if (ver == 16)
                     ver++;

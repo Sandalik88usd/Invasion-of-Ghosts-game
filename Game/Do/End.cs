@@ -10,6 +10,7 @@ namespace Game.Do
     {
         public static void EndOfGame()
         {
+            Console.Clear();
             FinalScene();
             Console.Clear();
             Console.CursorVisible = false;
@@ -70,13 +71,13 @@ namespace Game.Do
             switch (number)
             {
                 case 0:
-                    Animation.WriteAt("ААх, что со мной случилось.", x, y);
+                    Animation.WriteAt("Oh what happened to me?", x, y);
                     break;
                 case 1:
-                    Animation.WriteAt("Это был всеголишь сон, я не могу в это поверить.", x, y + 2);
+                    Animation.WriteAt("It was just a dream, I can't believe it.", x, y + 2);
                     break;
                 case 2:
-                    Animation.WriteAt("Но приведения были такими настоящими.", x, y + 4);
+                    Animation.WriteAt("But the ghosts were so real.", x, y + 4);
                     break;
                 case 3:
                     Animation.WriteAt("  .-.   ", 150, 18);
@@ -85,7 +86,11 @@ namespace Game.Do
                     Animation.WriteAt("^(   \\^", 150, 21);
                     Animation.WriteAt("  \\ (_,", 150, 22);
                     Animation.WriteAt("   '-'", 150, 23);
-                    Animation.WriteAt("Стоп, что?", x, y + 6);
+                    Animation.WriteAt("Stop, what?", x, y + 6);
+                    break;
+                case 4:
+                    Console.Clear();
+                    Console.Write("  ______           _          __                              \r\n |  ____|         | |        / _|                             \r\n | |__   _ __   __| |   ___ | |_    __ _  __ _ _ __ ___   ___ \r\n |  __| | '_ \\ / _` |  / _ \\|  _|  / _` |/ _` | '_ ` _ \\ / _ \\\r\n | |____| | | | (_| | | (_) | |   | (_| | (_| | | | | | |  __/\r\n |______|_| |_|\\__,_|  \\___/|_|    \\__, |\\__,_|_| |_| |_|\\___|\r\n                                    __/ |                     \r\n                                   |___/                      ");
                     break;
             }
         }

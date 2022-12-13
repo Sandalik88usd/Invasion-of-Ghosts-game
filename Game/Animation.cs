@@ -511,33 +511,33 @@ namespace Game
             switch (ghostpose)
             {
                 case 0:
-                    Animation.WriteAt("        ", horGhost, verGhost++);
-                    Animation.WriteAt("  .-.   ", horGhost, verGhost++);
-                    Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
-                    Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
-                    Animation.WriteAt("^(   \\^", horGhost, verGhost++);
-                    Animation.WriteAt("  \\ (_,", horGhost, verGhost++);
-                    Animation.WriteAt("   '-'  ", horGhost, verGhost++);
+                    Animation.WriteAt("         ", horGhost, verGhost++);
+                    Animation.WriteAt("   .-.   ", horGhost, verGhost++);
+                    Animation.WriteAt("  (* *)  ", horGhost, verGhost++);
+                    Animation.WriteAt("  / ° \\ ", horGhost, verGhost++);
+                    Animation.WriteAt(" ^(   \\^  ", horGhost, verGhost++);
+                    Animation.WriteAt("   \\ (_, ", horGhost, verGhost++);
+                    Animation.WriteAt("    '-'   ", horGhost, verGhost++);
                     Animation.WriteAt("         ", horGhost, verGhost++);
                     break;
                 case 1:
                     Animation.WriteAt("        ", horGhost, verGhost++);
-                    Animation.WriteAt("  .-.   ", horGhost, verGhost++);
-                    Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
-                    Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
-                    Animation.WriteAt("^(   \\^", horGhost, verGhost++);
-                    Animation.WriteAt("  \\ (  ", horGhost, verGhost++);
-                    Animation.WriteAt("   '-'  ", horGhost, verGhost++);
+                    Animation.WriteAt("   .-.   ", horGhost, verGhost++);
+                    Animation.WriteAt("  (* *)  ", horGhost, verGhost++);
+                    Animation.WriteAt("  / ° \\ ", horGhost, verGhost++);
+                    Animation.WriteAt(" ^(   \\^  ", horGhost, verGhost++);
+                    Animation.WriteAt("   \\ (   ", horGhost, verGhost++);
+                    Animation.WriteAt("    '-'  ", horGhost, verGhost++);
                     Animation.WriteAt("         ", horGhost, verGhost++);
                     break;
                 case 2:
                     Animation.WriteAt("        ", horGhost, verGhost++);
-                    Animation.WriteAt("  .-.   ", horGhost, verGhost++);
-                    Animation.WriteAt(" (* *)  ", horGhost, verGhost++);
-                    Animation.WriteAt(" / ° \\ ", horGhost, verGhost++);
-                    Animation.WriteAt("^\\   )^", horGhost, verGhost++);
-                    Animation.WriteAt(",_) /   ", horGhost, verGhost++);
-                    Animation.WriteAt(" '-'  ", horGhost, verGhost++);
+                    Animation.WriteAt("   .-.   ", horGhost, verGhost++);
+                    Animation.WriteAt("  (* *)  ", horGhost, verGhost++);
+                    Animation.WriteAt("  / ° \\ ", horGhost, verGhost++);
+                    Animation.WriteAt(" ^\\   )^  ", horGhost, verGhost++);
+                    Animation.WriteAt(" ,_) /    ", horGhost, verGhost++);
+                    Animation.WriteAt("  '-'   ", horGhost, verGhost++);
                     Animation.WriteAt("         ", horGhost, verGhost++);
                     break;
             }

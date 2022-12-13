@@ -74,11 +74,11 @@ namespace Game
                     horLong++;
                     for (int j = 0; j < horGhostHitbox.Length; j++)
                     {
-                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.firstGhostLive == 1 && PlayGame.roomTrigers == 0)
+                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.hallwayGhostLive == 1 && PlayGame.roomTrigers == 0)
                             GameOver.Deth();
                         if (horGhostHitbox[j] == Gun.horGun && verGhostHitbox[i] == Gun.verGun)
                         {
-                            GhostsMove.firstGhostLive = 0;
+                            GhostsMove.hallwayGhostLive = 0;
                         }
                             
                     }
@@ -147,10 +147,20 @@ namespace Game
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 1;
-                        if(GhostsMove.firstGhostLive == 1)
-                            GhostsMove.firstGhostLive = 2;
+                        if(GhostsMove.hallwayGhostLive == 1)
+                            GhostsMove.hallwayGhostLive = 2;
+                        if (GhostsMove.kitchenGhostLive == 2)
+                            GhostsMove.kitchenGhostLive = 1;
                         MoveMent.PlayerInKitchenAndVerGhost(hor, ver, 100, 23);
 
+                    }
+                }
+                for (int j = 55; j < 68; j++)
+                {
+                    if (j == hor && ver == 16 && key == ConsoleKey.Enter && PlayGame.countOfDeadGhosts == 4)
+                    {
+                        Clear();
+                        End.FinalScene();
                     }
                 }
                 if (key == ConsoleKey.Spacebar && gunTriger == 1)

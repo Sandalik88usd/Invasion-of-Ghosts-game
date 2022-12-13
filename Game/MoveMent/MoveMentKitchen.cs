@@ -62,11 +62,11 @@ namespace Game
                     horLong++;
                     for (int j = 0; j < horGhostHitbox.Length; j++)
                     {
-                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.secondGhostLive == 1 && PlayGame.roomTrigers == 1)
+                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.kitchenGhostLive == 1 && PlayGame.roomTrigers == 1)
                             GameOver.Deth();
                         if (horGhostHitbox[j] == Gun.horGun && verGhostHitbox[i] == Gun.verGun)
                         {
-                            GhostsMove.secondGhostLive = 0;
+                            GhostsMove.kitchenGhostLive = 0;
                         }
                     }
                 }
@@ -119,8 +119,12 @@ namespace Game
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 3;
-                        BedRoom.PaintBedRoom();
-                        MoveMentBedRoom.MoveMentInBedRoom(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref gunTriger);
+                        if (GhostsMove.kitchenGhostLive == 1)
+                            GhostsMove.kitchenGhostLive = 2;
+                        if (GhostsMove.bedGhostLive == 2)
+                            GhostsMove.bedGhostLive = 1;
+                        MoveMent.PlayerInBedRoomAndVerGhost(hor, ver, 50, 23);
+                        break;
                     }
                 }
                 for (int j = 170; j < 183; j++)
@@ -128,8 +132,11 @@ namespace Game
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 2;
-                        ButhRoom.PaintButhRoom();
-                        MoveMentButhRoom.MoveMentInButhRoom(hor, ver, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref gunTriger);
+                        if (GhostsMove.kitchenGhostLive == 1)
+                            GhostsMove.kitchenGhostLive = 2;
+                        if (GhostsMove.buthGhostLive == 2)
+                            GhostsMove.buthGhostLive = 1;
+                        MoveMent.PlayerInButhRoomAndVerGhost(hor, ver, 50, 23);
                        
                     }
                 }
@@ -144,11 +151,10 @@ namespace Game
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 0;
-                        if(GhostsMove.firstGhostLive == 2)
-                            GhostsMove.firstGhostLive = 1;
-                        //Hallway.HallwayRoom();
-                        //GhostsMove.VerGhostMove(150, 18, ref PlayGame.horGhostHitbox, ref PlayGame.verGhostHitbox);
-                        //MoveMentHallway.MoveMentInHallway(hor,ver,ref horGhostHitbox,ref horPlayerHitbox ,ref verGhostHitbox, ref gunTriger);
+                        if(GhostsMove.hallwayGhostLive == 2)
+                            GhostsMove.hallwayGhostLive = 1;
+                        if (GhostsMove.kitchenGhostLive == 1)
+                            GhostsMove.kitchenGhostLive = 2;
                         MoveMent.PlayerInHallwayAndVerGhost(hor, ver, 150, 18);
                     }
                 }

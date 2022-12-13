@@ -1,4 +1,5 @@
-﻿using Game.Rooms;
+﻿using Game.Do;
+using Game.Rooms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Game
     {
         public static void MoveMentInButhRoom(int hor, int ver, ref int[] horGhostHitbox, ref int[] horPlayerHitbox, ref int[] verGhostHitbox, ref int gunTriger)
         {
+            ButhRoom.PaintButhRoom();
             if (PlayGame.gunTriger == 0)
                 Animation.MainCharacterFaceOnScreen(hor, ver);
             else
@@ -63,16 +65,27 @@ namespace Game
                     pose = 0;
                 horLong = hor;
                 verLong = ver + 6;
-                //for (int i = 0; i < horPlayerHitbox.Length; i++)
-                //{
-                //    horPlayerHitbox[i] = horLong;
-                //    horLong++;
-                //    for (int j = 0; j < horGhostHitbox.Length; j++)
-                //    {
-                //        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong)
-                //            GameOver.Deth();
-                //    }
-                //}
+                for (int i = 0; i < horPlayerHitbox.Length; i++)
+                {
+                    horPlayerHitbox[i] = horLong;
+                    horLong++;
+                    for (int j = 0; j < horGhostHitbox.Length; j++)
+                    {
+                        if (horGhostHitbox[j] == horPlayerHitbox[i] && verGhostHitbox[i] == verLong && GhostsMove.buthGhostLive == 1 && PlayGame.roomTrigers == 2)
+                            GameOver.Deth();
+                        if (horGhostHitbox[j] == Gun.horGun && verGhostHitbox[i] == Gun.verGun)
+                        {
+                            GhostsMove.buthGhostLive = 0;
+                        }
+
+                    }
+                }
+                if (key == ConsoleKey.Spacebar && gunTriger == 1)
+                {
+                    Gun.Shoot(hor, ver);
+                    ButhRoom.PaintButhRoom();
+                    Player.WritePlayerWithGun(hor, ver);
+                }
 
                 for (int j = 0; j < yToilet.Length; j++)
                 {
@@ -136,8 +149,10 @@ namespace Game
                     if (j == hor && ver == 16 && key == ConsoleKey.Enter)
                     {
                         PlayGame.roomTrigers = 1;
-                        if (GhostsMove.firstGhostLive == 1)
-                            GhostsMove.firstGhostLive = 2;
+                        if (GhostsMove.kitchenGhostLive == 2)
+                            GhostsMove.kitchenGhostLive = 1;
+                        if (GhostsMove.buthGhostLive == 1)
+                            GhostsMove.buthGhostLive = 2;
                         MoveMent.PlayerInKitchenAndVerGhost(hor, ver, 100, 23);
                     }
                 }
