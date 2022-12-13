@@ -15,7 +15,8 @@ namespace Game
         {
             CursorVisible = false;
             Clear();
-            Write(@"             
+            Write(@" 
+
                              .-') _      (`-.     ('-.      .-')                              .-') _  
                             ( OO ) )   _(OO  )_  ( OO ).-. ( OO ).                           ( OO ) ) 
                  ,-.-') ,--./ ,--,',--(_/   ,. \ / . --. /(_)---\_)  ,-.-')  .-'),-----. ,--./ ,--,'  
@@ -90,7 +91,7 @@ namespace Game
                     GameMenu.AboutGame(ref coordinate);
                     break;
                 case 16:
-                    GameMenu.ExitGame();
+                    GameMenu.ExitGame(ref coordinate);
                     break;
             }
 
@@ -98,7 +99,9 @@ namespace Game
         public static void AboutGame(ref int coordinate)
         {
             Clear();
-            Write("About");
+            Animation.WriteAt("This is a short story game about the best office worker", 30,10);
+            Animation.WriteAt("who is addicted to the movie \"Ghostbusters\".", 34, 12);
+            Animation.WriteAt("made by Serhii Okara", 20, 15);
             ConsoleKey key = Console.ReadKey(true).Key;
             if (key == ConsoleKey.Escape)
             {
@@ -107,12 +110,17 @@ namespace Game
             }
 
         }
-        public static void ExitGame()
+        public static void ExitGame(ref int coordinate)
         {
             Clear();
-            WriteLine(" I hope you enjoy this game.");
-            WriteLine(" Press any key to exit");
-            ReadKey();
+            Animation.WriteAt("I hope you enjoy this game.", 48, 10);
+            Animation.WriteAt("Press Esc to come back or any key to exit.", 42, 11);
+            ConsoleKey key = Console.ReadKey(true).Key;
+            if (key == ConsoleKey.Escape)
+            {
+                TextInMenu();
+                ChooseButton(ref coordinate);
+            }
         }
     }
 }

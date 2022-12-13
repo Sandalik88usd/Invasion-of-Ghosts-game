@@ -15,8 +15,8 @@ namespace Game
         //public static Thread threadPlayer;
         //public static Thread threadGhostInHallway;
         public static int playerPosition = 0;
-        public static int roomTrigers = 0;
-        public static int gunTriger = 1;
+        public static int roomTrigers = -1;
+        public static int gunTriger = 0;
         public static int dethTriger = 0;
         public static int ghostDethTriger = 0;
         public static int trigersInWorkRoom = 0;
@@ -36,7 +36,7 @@ namespace Game
             int hor = 45; int ver = 26;
             //int hor = 120; int ver = 18;
             //int horGhost = 150; int verGhost = 18;
-            int pose = 0;
+            //int pose = 0;
             //int trigersInWorkRoom = 0;
             //int[] horGhostHitbox = new int[8];
             //int[] verGhostHitbox = new int[8];
@@ -45,14 +45,14 @@ namespace Game
             //threadGhostInHallway = new Thread(() => GhostsMove.GhostMoveInHallway(150, 18, ref horGhostHitbox, ref verGhostHitbox));
             //threadPlayer = new Thread(() => MoveMentHallway.MoveMentInHallway(57, 17, ref horGhostHitbox, ref horPlayerHitbox, ref verGhostHitbox, ref gunTriger));
 
-            //Do.FirstCutScene.PlayFirstCutScene();
-            //WorkRoom.FrameOfWorkRoom();
-            //WorkRoom.PaintWorkRoom();
-            //MoveMentWorkRoom.MoveMentInWorkRoom(hor, ver, ref trigersInWorkRoom);
+            Do.FirstCutScene.PlayFirstCutScene();
+            WorkRoom.FrameOfWorkRoom();
+            WorkRoom.PaintWorkRoom();
+            MoveMentWorkRoom.MoveMentInWorkRoom(hor, ver, ref trigersInWorkRoom);
 
             //SecondCutScene.PlaySecondCutScene();
             //Hallway.HallwayRoom();
-            MoveMent.PlayerInHallwayAndVerGhost(57, 17,150,18);
+            //MoveMent.PlayerInHallwayAndVerGhost(57, 17,150,18);
             //MoveMent.PlayerInButhRoomAndVerGhost(170,17,50,23);
 
             //threadGhostInHallway.Start();
