@@ -12,7 +12,7 @@ namespace Game
     {
         public static int hallwayGhostLive = 1;
         public static int kitchenGhostLive = 2;
-        public static int buthGhostLive = 1;
+        public static int buthGhostLive = 2;
         public static int bedGhostLive = 2;
         static void FindGhostHitBox(int horGhost, int verGhost, ref int[] horGhostHitbox, ref int[] verGhostHitbox)
         {

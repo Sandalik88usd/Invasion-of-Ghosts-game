@@ -21,7 +21,7 @@ namespace Game.Do
             Thread.Sleep(1000);
             x = 26; y = 6;
             Animation.WriteAt("┌───────────────────┐", x, y++);
-            Animation.WriteAt("│Brawser      _ <> x│", x, y++);
+            Animation.WriteAt("│Browser      _ <> x│", x, y++);
             Animation.WriteAt("├───────────────────┤", x, y++);
             for (int i = 0; i < 13; i++)
                 Animation.WriteAt("│                   │", x, y++);

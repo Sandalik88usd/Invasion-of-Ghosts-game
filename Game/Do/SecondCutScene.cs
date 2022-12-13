@@ -88,7 +88,7 @@ namespace Game.Do
                     Animation.WriteAt("What happened, did I see a ghost on the way home. Who was it? Halloween is already over.", x, y);
                     break;
                 case 1:
-                    Animation.WriteAt("Also, at work, casts on the computer and scanner, this does not seem to be a coincidence.", x, y + 2);
+                    Animation.WriteAt("Also, at work, ghosts on the computer and scanner, this does not seem to be a coincidence.", x, y + 2);
                     break;
                 case 2:
                     Animation.WriteAt("It looks like I'm in my favorite Ghostbusters movie, but I can't believe it.", x, y + 4);
@@ -100,10 +100,10 @@ namespace Game.Do
                     Animation.WriteAt("^(   \\^", 150, 21);
                     Animation.WriteAt("  \\ (_,", 150, 22);
                     Animation.WriteAt("   '-'", 150, 23);
-                    Animation.WriteAt("Wait, what are these ghosts in my house? It can't be real, but what if I didn't imagine it.", x, y + 6);
+                    Animation.WriteAt("Wait, it's a ghost in my house? It can't be real, but what if I didn't imagine it.", x, y + 6);
                     break;
                 case 4:
-                    Animation.WriteAt("I have to take the ghostbusters movie gun in the bedroom that I ordered from amazon and show these ghosts what I'm made of with them if they're real!", x, y + 8);
+                    Animation.WriteAt("I have to take the ghostbusters movie gun in the bedroom, that I ordered from amazon and show these ghosts what I'm made of!", x, y + 8);
                     break;
             }
         }

@@ -57,11 +57,14 @@ namespace Game.Do
             Animation.HeadOfMainCharacter(5, 39);
             //Animation.TalkingMouth(9, 42, 50);
             int number = 0;
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < 5; j++)
             {
                 Phrases(number++);
-                for (int i = 0; i < 5; i++)
-                    Animation.TalkingMouth(9, 45, 50);
+                if (j != 4)
+                {
+                    for (int i = 0; i < 4; i++)
+                        Animation.TalkingMouth(9, 45, 50);
+                }
             }
         }
         static void Phrases(int number)
@@ -90,6 +93,11 @@ namespace Game.Do
                     break;
                 case 4:
                     Console.Clear();
+                    Console.CursorVisible = false;
+                    Console.WindowWidth = 70;
+                    Console.WindowHeight = 10;
+                    Console.BufferWidth = 70;
+                    Console.BufferHeight = 10;
                     Console.Write("  ______           _          __                              \r\n |  ____|         | |        / _|                             \r\n | |__   _ __   __| |   ___ | |_    __ _  __ _ _ __ ___   ___ \r\n |  __| | '_ \\ / _` |  / _ \\|  _|  / _` |/ _` | '_ ` _ \\ / _ \\\r\n | |____| | | | (_| | | (_) | |   | (_| | (_| | | | | | |  __/\r\n |______|_| |_|\\__,_|  \\___/|_|    \\__, |\\__,_|_| |_| |_|\\___|\r\n                                    __/ |                     \r\n                                   |___/                      ");
                     break;
             }
