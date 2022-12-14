@@ -1,1 +1,1 @@
-# Invasion-of-Ghosts-game
+# Invasion-of-Ghosts-ConsoleGame
