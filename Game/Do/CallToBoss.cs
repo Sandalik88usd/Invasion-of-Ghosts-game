@@ -103,7 +103,7 @@ namespace Game.Do
                     Animation.WriteAt("Boss: It is very sad. Okay, you can go home tomorrow, the master will fix everything.", x, y + 1);
                     break;
                 case 8:
-                    Animation.WriteAt("Billy: Ok bos see you tomorrow.", x, y + 2);
+                    Animation.WriteAt("Billy: Ok boss see you tomorrow.", x, y + 2);
                     break;
                 case 9:
                     Animation.WriteAt("Boss: Bye.", x, y + 3);
