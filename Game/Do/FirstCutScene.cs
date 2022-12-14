@@ -25,10 +25,11 @@ namespace Game.Do
                 {
                     case 0:
                         ZeroFrame();
+                        Animation.WriteAt("Press Enter to continue.", 105, 2);
                         break;
                     case 1:
                         FirstFrame();
-                        Animation.WriteAt("Press Enter to continue.", 105, 2);
+
                         break;
                     case 2:
                         SecondFrame();
